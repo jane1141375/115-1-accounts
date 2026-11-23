@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf7f1">
-  <meta name="description" content="柴犬理財守護員，輕鬆記帳、掌握預算、情感陪伴與智慧消費滅火，讓每一筆花費都更有溫度。">
-  <title>柴犬理財守護員｜智慧記帳與情感陪伴 🐾</title>
+  <meta name="description" content="柴犬理財守護員，去壓力彈性記帳、每天安心花費額度與溫暖陪伴，讓記帳像擼狗一樣療癒。">
+  <title>柴犬理財守護員｜去壓力彈性記帳與情感陪伴 🐾</title>
   <style>
     :root {
       color-scheme: light;
       --bg: #faf7f1;
       --paper: #fffefa;
       --paper-card: #ffffff;
-      --ink: #322a24;
-      --ink-light: #5a4f45;
-      --muted: #958b80;
-      --line: #eee8dd;
-      --line-strong: #ded4c3;
+      --ink: #362c25;
+      --ink-light: #5d5248;
+      --muted: #9c9186;
+      --line: #eee7dd;
+      --line-strong: #dfd5c4;
       --orange: #e88b52;
       --orange-dark: #bc6738;
-      --orange-pale: #fff0e4;
+      --orange-pale: #fff1e5;
       --orange-gradient: linear-gradient(135deg, #f6a06b 0%, #e88b52 100%);
       --sage: #8caa8f;
       --sage-pale: #edf4ec;
@@ -29,16 +29,15 @@
       --plum-pale: #f4eff5;
       --yellow: #f4b251;
       --yellow-pale: #fef7ec;
-      --red: #d96b52;
-      --red-pale: #fdeee9;
+      --warm-peach: #f9d8c4;
       --shadow-sm: 0 4px 12px rgba(83, 61, 39, .04);
-      --shadow: 0 14px 40px rgba(83, 61, 39, .065);
+      --shadow: 0 12px 36px rgba(83, 61, 39, .065);
       --shadow-lg: 0 20px 50px rgba(83, 61, 39, .1);
       --radius-sm: 10px;
       --radius-md: 16px;
       --radius: 22px;
       --radius-lg: 30px;
-      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       font-family: "Nunito Sans", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", system-ui, sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,9 +55,9 @@
       outline-offset: 2px;
     }
 
-    /* App Container Layout */
+    /* Main Container Layout */
     .app {
-      max-width: 1440px;
+      max-width: 1400px;
       min-height: 100vh;
       margin: auto;
       display: grid;
@@ -70,11 +69,11 @@
       position: sticky;
       top: 0;
       height: 100vh;
-      padding: 32px 20px 24px;
+      padding: 30px 20px 24px;
       border-right: 1px solid var(--line);
       display: flex;
       flex-direction: column;
-      background: rgba(255, 254, 250, .85);
+      background: rgba(255, 254, 250, .88);
       backdrop-filter: blur(12px);
       z-index: 20;
     }
@@ -83,18 +82,18 @@
       align-items: center;
       gap: 12px;
       padding: 0 8px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .brand-mark {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
       border-radius: 14px;
       background: var(--orange-pale);
       font-size: 26px;
       box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
-      animation: floatDog 3s ease-in-out infinite alternate;
+      animation: floatDog 3.5s ease-in-out infinite alternate;
     }
     @keyframes floatDog {
       0% { transform: translateY(0) rotate(0deg); }
@@ -109,8 +108,8 @@
     .brand-caption {
       margin-top: 2px;
       color: var(--muted);
-      font-size: 11px;
-      font-weight: 500;
+      font-size: 11.5px;
+      font-weight: 600;
     }
 
     .nav-label {
@@ -120,7 +119,7 @@
       text-transform: uppercase;
       letter-spacing: .08em;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .nav {
       display: flex;
@@ -172,7 +171,7 @@
       margin-top: auto;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
     .pet-affinity-box {
       background: var(--yellow-pale);
@@ -186,7 +185,7 @@
       transition: var(--transition);
     }
     .pet-affinity-box:hover {
-      background: #fdf2de;
+      background: #fdf0db;
       transform: translateY(-2px);
     }
     .affinity-title {
@@ -220,57 +219,56 @@
       color: var(--ink);
       border-color: var(--line-strong);
     }
-    .budget-mini {
+    .sidebar-budget-summary {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       padding: 14px;
       box-shadow: var(--shadow-sm);
     }
-    .mini-title {
+    .summary-title {
       font-size: 11px;
       font-weight: 700;
       color: var(--muted);
       display: flex;
       justify-content: space-between;
     }
-    .mini-amount {
-      font-size: 16px;
-      font-weight: 800;
+    .summary-amount {
+      font-size: 17px;
+      font-weight: 850;
       margin: 6px 0;
       color: var(--ink);
     }
-    .mini-track {
+    .summary-track {
       height: 6px;
       background: var(--line);
       border-radius: 99px;
       overflow: hidden;
     }
-    .mini-fill {
+    .summary-fill {
       height: 100%;
       background: var(--orange-gradient);
       border-radius: 99px;
       transition: width .4s ease;
       width: 0%;
     }
-    .mini-note {
-      font-size: 10.5px;
+    .summary-note {
+      font-size: 11px;
       color: var(--muted);
       margin-top: 6px;
     }
     .privacy-note {
-      font-size: 10px;
+      font-size: 10.5px;
       color: var(--muted);
       text-align: center;
-      margin: 0;
     }
 
     /* Main Content Area */
     .main {
-      padding: 32px 40px 60px;
+      padding: 28px 36px 60px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 24px;
     }
     .topbar {
       display: flex;
@@ -279,8 +277,8 @@
       gap: 16px;
     }
     .greeting {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 13.5px;
+      font-weight: 750;
       color: var(--orange-dark);
       letter-spacing: .02em;
     }
@@ -302,37 +300,17 @@
       padding: 8px 16px;
       border-radius: 99px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 650;
       color: var(--ink-light);
       box-shadow: var(--shadow-sm);
-    }
-    .primary-button {
-      background: var(--orange-gradient);
-      color: #fff;
-      font-weight: 800;
-      font-size: 14px;
-      padding: 10px 20px;
-      border-radius: 99px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 6px 18px rgba(232, 139, 82, .32);
-      transition: var(--transition);
-    }
-    .primary-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(232, 139, 82, .45);
-    }
-    .primary-button:active {
-      transform: translateY(0);
     }
 
     /* Views */
     .view {
       display: none;
       flex-direction: column;
-      gap: 24px;
-      animation: fadeIn .3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      gap: 22px;
+      animation: fadeIn .28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .view.active { display: flex; }
     @keyframes fadeIn {
@@ -340,149 +318,105 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero Dog Banner */
-    .hero {
+    /* =====================================================================
+       Hero: Shiba as Centerpiece & Emotional Sanctuary
+       ===================================================================== */
+    .shiba-hero-center {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      padding: 32px 36px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 1fr);
-      gap: 32px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
+    .shiba-hero-center::before {
       content: "";
       position: absolute;
       top: -60px;
-      right: -60px;
-      width: 220px;
-      height: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 480px;
+      height: 240px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,139,82,.12) 0%, rgba(255,255,255,0) 70%);
+      background: radial-gradient(circle, rgba(246, 160, 107, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
       pointer-events: none;
     }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 99px;
-      background: var(--orange-pale);
-      color: var(--orange-dark);
-      font-size: 12px;
-      font-weight: 750;
-      margin-bottom: 12px;
-    }
-    .hero-title {
-      font-size: 24px;
-      font-weight: 850;
-      letter-spacing: -.03em;
-      margin-bottom: 10px;
-      line-height: 1.3;
-      color: var(--ink);
-    }
-    .hero-message {
-      font-size: 14.5px;
-      color: var(--ink-light);
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-    .hero-amount-box {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 8px;
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 10px 18px;
-      border-radius: var(--radius-md);
-    }
-    .hero-amount-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .hero-amount-val {
-      font-size: 22px;
-      font-weight: 850;
-      color: var(--orange-dark);
-    }
 
-    /* Interactive Shiba Scene */
-    .dog-scene {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 10px 0;
-    }
+    /* Shiba Avatar Wrapper */
     .shiba-avatar-wrapper {
       position: relative;
       cursor: pointer;
       user-select: none;
+      display: inline-block;
       transition: transform .2s ease;
+      margin-bottom: 6px;
     }
     .shiba-avatar-wrapper:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
     .shiba-avatar-wrapper:active {
       transform: scale(0.96);
     }
     .shiba-svg {
-      width: 170px;
-      height: 170px;
-      filter: drop-shadow(0 12px 20px rgba(83, 61, 39, .15));
+      width: 176px;
+      height: 176px;
+      filter: drop-shadow(0 14px 22px rgba(83, 61, 39, .14));
     }
     .pet-hint {
       position: absolute;
-      bottom: -4px;
-      background: rgba(50, 42, 36, .85);
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(54, 44, 37, 0.88);
       color: #fff;
-      font-size: 10.5px;
-      font-weight: 700;
-      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 750;
+      padding: 4px 12px;
       border-radius: 99px;
       backdrop-filter: blur(4px);
       pointer-events: none;
-      opacity: 0;
-      transition: opacity .2s;
+      opacity: 0.88;
+      transition: opacity .2s, transform .2s;
+      white-space: nowrap;
     }
     .shiba-avatar-wrapper:hover .pet-hint {
       opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
     }
     .floating-heart {
       position: absolute;
-      color: #f43f5e;
-      font-size: 22px;
+      font-size: 24px;
       pointer-events: none;
       animation: floatUp 1s ease-out forwards;
       z-index: 10;
     }
     @keyframes floatUp {
       0% { opacity: 1; transform: translateY(0) scale(0.6); }
-      50% { transform: translateY(-30px) scale(1.2); }
-      100% { opacity: 0; transform: translateY(-60px) scale(0.8); }
+      50% { transform: translateY(-34px) scale(1.2); }
+      100% { opacity: 0; transform: translateY(-70px) scale(0.8); }
     }
-    .dog-speech {
-      margin-top: 14px;
+
+    /* Conversational Speech Bubble */
+    .shiba-speech-bubble {
+      margin-top: 8px;
       background: #fff;
       border: 1px solid var(--line-strong);
-      padding: 10px 18px;
-      border-radius: 18px;
-      font-size: 13.5px;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-size: 15px;
       font-weight: 750;
       color: var(--ink);
-      box-shadow: 0 4px 15px rgba(83, 61, 39, .06);
+      box-shadow: 0 4px 16px rgba(83, 61, 39, .06);
       position: relative;
-      max-width: 280px;
-      text-align: center;
-      line-height: 1.4;
+      max-width: 620px;
+      line-height: 1.5;
     }
-    .dog-speech::before {
+    .shiba-speech-bubble::before {
       content: "";
       position: absolute;
       top: -8px;
@@ -493,29 +427,268 @@
       border-color: transparent transparent #fff transparent;
     }
 
-    /* Emotional spending consultation bar */
-    .ask-shiba-bar {
-      margin-top: 14px;
+    /* Emotional spending consultation pills */
+    .emotional-snuffer-bar {
+      margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       justify-content: center;
+      align-items: center;
     }
-    .shiba-pill-btn {
+    .snuffer-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+    .snuffer-btn {
       background: var(--paper);
       border: 1px solid var(--line);
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-light);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .snuffer-btn:hover {
+      background: var(--orange-pale);
+      border-color: var(--orange);
+      color: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(232, 139, 82, .15);
+    }
+
+    /* =====================================================================
+       Top Section: One-Sentence Lazy Quick Input (一句話懶人快記)
+       ===================================================================== */
+    .quick-input-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .quick-input-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .quick-input-title h3 {
+      font-size: 15px;
+      font-weight: 850;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quick-input-hint {
       font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Quick Input Form Row */
+    .quick-input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .quick-text-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 2px solid var(--line-strong);
+      border-radius: 99px;
+      background: var(--bg);
+      font-size: 15px;
       font-weight: 650;
+      color: var(--ink);
+      transition: var(--transition);
+    }
+    .quick-text-input:focus {
+      border-color: var(--orange);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(232, 139, 82, .15);
+    }
+    .quick-submit-btn {
+      background: var(--orange-gradient);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14.5px;
+      padding: 14px 24px;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 18px rgba(232, 139, 82, .32);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .quick-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(232, 139, 82, .45);
+    }
+    .quick-voice-btn {
+      flex-shrink: 0;
+      background: var(--orange-pale);
+      color: var(--orange-dark);
+      padding: 13px 18px;
+      border-radius: 99px;
+      font-size: 13.5px;
+      font-weight: 800;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .quick-voice-btn:hover { background: #ffe4ce; }
+
+    /* One-click Direct Entry Quick Capsules */
+    .quick-capsules-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .capsules-label {
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--muted);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .capsules-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .capsule-item {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 7px 15px;
+      font-size: 12.5px;
+      font-weight: 750;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+    .capsule-item:hover {
+      background: var(--orange-pale);
+      border-color: var(--orange);
+      color: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(232,139,82,.15);
+    }
+
+    /* =====================================================================
+       Flexible Living Allowance Cards & Daily Safe Spending
+       ===================================================================== */
+    .allowance-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 18px;
+    }
+    .allowance-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+    }
+    .card-eyebrow {
+      font-size: 12.5px;
+      font-weight: 750;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .main-metric {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      color: var(--ink);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .metric-sub {
+      font-size: 13.5px;
+      font-weight: 650;
+      color: var(--muted);
+    }
+    .metric-note {
+      font-size: 13.5px;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    /* Budget Adjust Quick Pills */
+    .budget-adjust-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .adjust-pill {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 6px 13px;
+      font-size: 12px;
+      font-weight: 750;
       color: var(--ink-light);
       transition: var(--transition);
     }
-    .shiba-pill-btn:hover {
+    .adjust-pill:hover {
       background: var(--orange-pale);
       border-color: var(--orange);
       color: var(--orange-dark);
       transform: translateY(-1px);
+    }
+
+    /* Progress Track */
+    .progress-bar-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .progress-track {
+      height: 10px;
+      background: var(--line);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--orange-gradient);
+      border-radius: 99px;
+      transition: width .4s ease, background .3s;
+      width: 0%;
+    }
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
     }
 
     /* Section Headings */
@@ -523,7 +696,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-top: 6px;
+      margin-top: 4px;
     }
     .section-heading h2 {
       font-size: 19px;
@@ -548,105 +721,7 @@
       text-decoration: underline;
     }
 
-    /* Quick Expense Chips */
-    .quick-chips-panel {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: var(--shadow-sm);
-      overflow-x: auto;
-    }
-    .chips-label {
-      font-size: 12px;
-      font-weight: 750;
-      color: var(--muted);
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .chips-container {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .chip-item {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: 99px;
-      padding: 6px 14px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition);
-    }
-    .chip-item:hover {
-      background: var(--orange-pale);
-      border-color: var(--orange);
-      color: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(232,139,82,.15);
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .stat-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px 24px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      position: relative;
-    }
-    .stat-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      border-color: var(--line-strong);
-    }
-    .stat-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .stat-icon {
-      font-size: 20px;
-    }
-    .stat-number {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -.03em;
-      margin: 10px 0 6px;
-      color: var(--ink);
-    }
-    .stat-foot {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .positive { color: var(--sage); font-weight: 800; }
-    .warning { color: var(--yellow); font-weight: 800; }
-    .danger { color: var(--red); font-weight: 800; }
-
-    /* Content Grid Panels */
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: 20px;
-    }
+    /* Panels & Tables */
     .panel {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -654,131 +729,13 @@
       padding: 24px;
       box-shadow: var(--shadow-sm);
     }
-    .panel-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-    .panel-heading h3 {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-    .panel-heading p {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* Weekly Chart */
-    .chart {
-      height: 190px;
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
-      padding-top: 24px;
-    }
-    .bar-column {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      height: 100%;
-    }
-    .bar-value {
-      font-size: 10.5px;
-      color: var(--muted);
-      font-weight: 700;
-      min-height: 14px;
-    }
-    .bar-track {
-      flex: 1;
-      width: 100%;
-      max-width: 38px;
-      background: var(--bg);
-      border-radius: 8px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-    }
-    .bar {
-      width: 100%;
-      background: var(--sage);
-      border-radius: 8px;
-      transition: height .5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .bar.today {
-      background: var(--orange-gradient);
-    }
-    .bar-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    /* Donut Category Chart */
-    .category-content {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-    .donut {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      position: relative;
+    .content-grid {
       display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,.06);
-    }
-    .donut-hole {
-      width: 96px;
-      height: 96px;
-      background: var(--paper);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 14px rgba(83, 61, 39, .06);
-    }
-    .donut-hole strong {
-      font-size: 17px;
-      font-weight: 850;
-      color: var(--ink);
-    }
-    .donut-hole span {
-      font-size: 10px;
-      color: var(--muted);
-    }
-    .legend {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .legend-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-    }
-    .legend-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--ink-light);
-    }
-    .legend-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 18px;
     }
 
-    /* Transactions List & Table */
+    /* Transactions List */
     .transaction-list {
       display: flex;
       flex-direction: column;
@@ -787,7 +744,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 4px;
+      padding: 13px 4px;
       border-bottom: 1px solid var(--line);
       transition: background .15s;
     }
@@ -851,8 +808,115 @@
       color: var(--ink);
     }
     .action-icon-btn.delete:hover {
-      background: var(--red-pale);
-      color: var(--red);
+      background: #fdeee9;
+      color: #d96b52;
+    }
+
+    /* Charts */
+    .chart {
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      padding-top: 20px;
+    }
+    .bar-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+    }
+    .bar-value {
+      font-size: 10.5px;
+      color: var(--muted);
+      font-weight: 700;
+      min-height: 14px;
+    }
+    .bar-track {
+      flex: 1;
+      width: 100%;
+      max-width: 36px;
+      background: var(--bg);
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .bar {
+      width: 100%;
+      background: var(--sage);
+      border-radius: 8px;
+      transition: height .5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bar.today {
+      background: var(--orange-gradient);
+    }
+    .bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    /* Donut Category Chart */
+    .category-content {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .donut {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      position: relative;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,.06);
+    }
+    .donut-hole {
+      width: 90px;
+      height: 90px;
+      background: var(--paper);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(83, 61, 39, .06);
+    }
+    .donut-hole strong {
+      font-size: 16px;
+      font-weight: 850;
+      color: var(--ink);
+    }
+    .donut-hole span {
+      font-size: 10px;
+      color: var(--muted);
+    }
+    .legend {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .legend-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .legend-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink-light);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
 
     /* Tip Card */
@@ -898,23 +962,17 @@
       border: 1px solid var(--line);
       border-radius: 99px;
       background: var(--paper);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink-light);
-    }
-    .toolbar-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 13.5px;
+      color: var(--ink);
     }
     .outline-btn {
-      padding: 9px 16px;
+      padding: 10px 18px;
       border: 1px solid var(--line-strong);
       border-radius: 99px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--ink);
       background: var(--paper);
+      font-size: 13.5px;
+      font-weight: 750;
+      color: var(--ink);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -922,30 +980,28 @@
     }
     .outline-btn:hover {
       background: var(--bg);
-      border-color: var(--ink);
+      border-color: var(--orange);
+      color: var(--orange-dark);
     }
 
-    /* Table Component */
     .table-panel { padding: 0; overflow: hidden; }
     .table-head {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      padding: 14px 24px;
-      background: var(--bg);
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      padding: 14px 20px;
       font-size: 12px;
       font-weight: 800;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .05em;
+      background: rgba(255,255,255,.5);
+      border-bottom: 1px solid var(--line);
     }
     .table-row {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--line);
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      padding: 14px 20px;
       align-items: center;
-      font-size: 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13.5px;
       transition: background .15s;
     }
     .table-row:last-child { border-bottom: none; }
@@ -957,89 +1013,11 @@
       font-weight: 750;
     }
 
-    /* Budgets View */
-    .budget-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 18px;
-    }
-    .budget-card {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .budget-card-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .budget-card-head div strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 800;
-    }
-    .budget-card-head div span {
-      font-size: 11px;
-      color: var(--muted);
-    }
-    .budget-figures {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      margin-top: 4px;
-    }
-    .budget-spent { font-size: 22px; font-weight: 850; color: var(--ink); }
-    .budget-limit { font-size: 13px; color: var(--muted); font-weight: 600; }
-    .progress-track {
-      height: 8px;
-      background: var(--bg);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      border-radius: 99px;
-      transition: width .4s ease;
-    }
-    .budget-remaining {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 650;
-    }
-
-    /* Settings View */
-    .settings-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .setting-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .setting-row:last-child { border-bottom: none; }
-    .setting-row strong { display: block; font-size: 15px; font-weight: 800; }
-    .setting-row span { font-size: 12px; color: var(--muted); }
-    .setting-input {
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: var(--bg);
-      font-size: 14px;
-      font-weight: 700;
-      width: 140px;
-      text-align: right;
-    }
-
     /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(50, 42, 36, .45);
+      background: rgba(54, 44, 37, .45);
       backdrop-filter: blur(6px);
       display: none;
       place-items: center;
@@ -1052,10 +1030,10 @@
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       width: 100%;
-      max-width: 500px;
-      padding: 30px;
+      max-width: 480px;
+      padding: 28px;
       box-shadow: var(--shadow-lg);
-      animation: modalPop .25s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: modalPop .22s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes modalPop {
       from { opacity: 0; transform: scale(0.95); }
@@ -1065,7 +1043,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .modal-top h2 { font-size: 20px; font-weight: 850; }
     .modal-top p { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
@@ -1080,7 +1058,6 @@
       transition: var(--transition);
     }
     .close-button:hover { background: var(--bg); color: var(--ink); }
-
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1102,30 +1079,11 @@
       background: var(--bg);
       font-size: 14px;
     }
-    .voice-row {
-      display: flex;
-      gap: 8px;
-    }
-    .voice-button {
-      flex-shrink: 0;
-      background: var(--orange-pale);
-      color: var(--orange-dark);
-      padding: 0 14px;
-      border-radius: var(--radius-sm);
-      font-size: 12.5px;
-      font-weight: 800;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .voice-button:hover { background: #ffe4ce; }
-    .voice-button:disabled { opacity: 0.6; cursor: not-allowed; }
     .modal-actions {
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-      margin-top: 24px;
+      margin-top: 22px;
     }
     .secondary-button {
       padding: 10px 18px;
@@ -1137,6 +1095,23 @@
       transition: var(--transition);
     }
     .secondary-button:hover { background: #f0e9df; color: var(--ink); }
+    .primary-button {
+      background: var(--orange-gradient);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 99px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 6px 18px rgba(232, 139, 82, .32);
+      transition: var(--transition);
+    }
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(232, 139, 82, .45);
+    }
 
     /* Toast */
     .toast {
@@ -1144,7 +1119,7 @@
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%) translateY(40px);
-      background: rgba(50, 42, 36, .94);
+      background: rgba(54, 44, 37, .94);
       color: #fff;
       padding: 12px 24px;
       border-radius: 99px;
@@ -1193,17 +1168,18 @@
     /* Responsive */
     @media (max-width: 1024px) {
       .app { grid-template-columns: 220px 1fr; }
-      .hero { grid-template-columns: 1fr; gap: 20px; }
+      .allowance-grid { grid-template-columns: 1fr; }
       .content-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr; gap: 12px; }
     }
     @media (max-width: 768px) {
       .app { grid-template-columns: 1fr; }
       .sidebar { display: none; }
       .mobile-nav { display: flex; }
-      .main { padding: 20px 18px 80px; gap: 20px; }
+      .main { padding: 18px 16px 80px; gap: 18px; }
       .topbar h1 { font-size: 22px; }
-      .hero { padding: 24px 20px; }
+      .quick-input-row { flex-direction: column; align-items: stretch; }
+      .quick-text-input { width: 100%; }
+      .quick-submit-btn, .quick-voice-btn { width: 100%; justify-content: center; }
       .table-head { display: none; }
       .table-row {
         grid-template-columns: 1fr;
@@ -1221,45 +1197,45 @@
       <div class="brand">
         <div class="brand-mark" aria-hidden="true">🐕</div>
         <div>
-          <div class="brand-name">柴柴理財守護員</div>
-          <div class="brand-caption">智慧記帳與情感陪伴</div>
+          <div class="brand-name">柴柴生活守護員</div>
+          <div class="brand-caption">去壓力生活記帳與陪伴</div>
         </div>
       </div>
 
-      <div class="nav-label">我的帳本</div>
+      <div class="nav-label">帳本生活</div>
       <nav class="nav">
-        <button class="nav-button active" data-view="dashboard"><span class="nav-icon">⌂</span>總覽首頁</button>
-        <button class="nav-button" data-view="transactions"><span class="nav-icon">↕</span>記帳明細</button>
-        <button class="nav-button" data-view="budgets"><span class="nav-icon">◉</span>預算管理</button>
-        <button class="nav-button" data-view="reports"><span class="nav-icon">▥</span>消費分析</button>
+        <button class="nav-button active" data-view="dashboard"><span class="nav-icon">⌂</span>溫暖首頁</button>
+        <button class="nav-button" data-view="transactions"><span class="nav-icon">↕</span>開銷明細</button>
+        <button class="nav-button" data-view="allowance"><span class="nav-icon">🌱</span>生活費調整</button>
+        <button class="nav-button" data-view="reports"><span class="nav-icon">▥</span>生活開銷分布</button>
         <button class="nav-button" data-view="settings"><span class="nav-icon">⚙</span>帳本設定</button>
       </nav>
 
       <div class="sidebar-bottom">
         <!-- Interactive Affinity Widget -->
-        <div class="pet-affinity-box" id="sidebar-affinity-btn" title="點擊跟柴柴互動，提升好感度！">
+        <div class="pet-affinity-box" id="sidebar-affinity-btn" title="摸摸柴柴，親密度 +1！">
           <div>
-            <div class="affinity-title">柴柴好感度</div>
+            <div class="affinity-title">阿柴親密度</div>
             <div class="affinity-value"><span id="affinity-heart">💖</span> <span id="affinity-level">Lv.1 親密好夥伴</span></div>
           </div>
-          <span style="font-size:20px;">🐾</span>
+          <span style="font-size:22px;">🐾</span>
         </div>
 
         <!-- Sound Toggle -->
         <button class="sound-toggle-btn" id="sound-toggle-btn">
-          <span>操作音效反饋</span>
+          <span>操作互動音效</span>
           <span id="sound-status-icon">🔊 開啟</span>
         </button>
 
-        <!-- Mini Budget Progress -->
-        <div class="budget-mini">
-          <div class="mini-title"><span>本月預算運用</span><span id="mini-pct">0%</span></div>
-          <div class="mini-amount" id="mini-remaining">$0</div>
-          <div class="mini-track"><div class="mini-fill" id="mini-fill"></div></div>
-          <div class="mini-note" id="mini-note">載入中…</div>
+        <!-- Sidebar Living Allowance Summary -->
+        <div class="sidebar-budget-summary">
+          <div class="summary-title"><span>本月生活費進度</span><span id="mini-pct">0%</span></div>
+          <div class="summary-amount" id="mini-remaining">$0</div>
+          <div class="summary-track"><div class="summary-fill" id="mini-fill"></div></div>
+          <div class="summary-note" id="mini-note">載入中…</div>
         </div>
 
-        <p class="privacy-note">🔒 資料僅儲存於本地瀏覽器，隱私安全無虞</p>
+        <p class="privacy-note">🔒 100% 本機儲存，財務隱私不外流</p>
       </div>
     </aside>
 
@@ -1267,159 +1243,197 @@
     <main class="main">
       <header class="topbar">
         <div>
-          <div class="greeting" id="greeting">嗨，今天也辛苦了</div>
-          <h1 id="view-heading">錢包今天過得好嗎？</h1>
+          <div class="greeting" id="greeting">嗨，今天也辛苦了 ☀️</div>
+          <h1 id="view-heading">今天過得還舒心嗎？</h1>
         </div>
         <div class="top-actions">
           <div class="date-pill" id="today-date">載入中…</div>
-          <button class="primary-button" data-add-btn id="global-add-btn">
-            <span>＋</span>
-            <span>記一筆</span>
+          <button class="outline-btn" id="quick-custom-btn" title="詳細填寫或補記過去日期的帳目">
+            <span>＋ 詳細記帳</span>
           </button>
         </div>
       </header>
 
-      <!-- VIEW 1: DASHBOARD -->
+      <!-- ===================================================================
+           VIEW 1: DASHBOARD (溫暖首頁)
+           =================================================================== -->
       <section class="view active" id="view-dashboard" aria-labelledby="view-heading">
-        <!-- Hero Dog Scene -->
-        <div class="hero">
-          <div class="hero-copy">
-            <div class="eyebrow"><span>✦</span> 你的專屬柴犬守護員在線陪伴</div>
-            <h2 class="hero-title" id="hero-title">慢慢記，也是在好好照顧自己。</h2>
-            <p class="hero-message" id="hero-message">每一筆開銷的誠實紀錄，都是邁向財務自由的小小足跡。今天也和小柴一起看顧錢包吧！</p>
-            <div class="hero-amount-box">
-              <span class="hero-amount-label">本月剩餘安心額度：</span>
-              <span class="hero-amount-val" id="hero-remaining">$0</span>
+        
+        <!-- 1. Shiba Hero Centerpiece (柴犬視覺主角) -->
+        <div class="shiba-hero-center">
+          <div class="shiba-avatar-wrapper" id="shiba-avatar-btn" title="點我摸摸頭！">
+            <div class="pet-hint">點擊摸摸柴柴 🐾</div>
+            <!-- Scalable Dynamic Shiba SVG -->
+            <svg class="shiba-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Soft Glow Aura -->
+              <circle cx="100" cy="100" r="90" fill="#FFF0E4" fill-opacity="0.8"/>
+              
+              <!-- Shiba Torso -->
+              <ellipse cx="100" cy="148" rx="56" ry="40" fill="#E88B52"/>
+              <ellipse cx="100" cy="158" rx="36" ry="26" fill="#FFF8F0"/>
+              
+              <!-- Ears -->
+              <path id="ear-left" d="M50 78 C42 42 66 32 82 56 Z" fill="#D97736"/>
+              <path d="M56 72 C50 48 68 40 76 58 Z" fill="#FFF0E4"/>
+              <path id="ear-right" d="M150 78 C158 42 134 32 118 56 Z" fill="#D97736"/>
+              <path d="M144 72 C150 48 132 40 124 58 Z" fill="#FFF0E4"/>
+
+              <!-- Shiba Head -->
+              <ellipse cx="100" cy="102" rx="58" ry="48" fill="#E88B52"/>
+              
+              <!-- White Cheeks -->
+              <path d="M55 108 C55 136 78 142 100 142 C122 142 145 136 145 108 C145 92 130 84 100 84 C70 84 55 92 55 108 Z" fill="#FFF8F0"/>
+              
+              <!-- Eyebrows (Signature White Dots) -->
+              <circle cx="78" cy="74" r="7" fill="#FFF8F0"/>
+              <circle cx="122" cy="74" r="7" fill="#FFF8F0"/>
+
+              <!-- Eyes (Dynamic State) -->
+              <g id="shiba-eyes">
+                <path d="M70 92 Q76 83 82 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+                <path d="M118 92 Q124 83 130 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Nose & Mouth -->
+              <path d="M93 105 C93 102 107 102 107 105 C107 110 93 110 93 105 Z" fill="#362C25"/>
+              <path d="M100 108 L100 115" stroke="#362C25" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M92 116 C95 120 100 120 100 115 C100 120 105 120 108 116" stroke="#362C25" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+              <!-- Cheeks Blush -->
+              <ellipse id="blush-left" cx="62" cy="108" rx="8" ry="5" fill="#F43F5E" fill-opacity="0.35"/>
+              <ellipse id="blush-right" cx="138" cy="108" rx="8" ry="5" fill="#F43F5E" fill-opacity="0.35"/>
+
+              <!-- Paws -->
+              <ellipse cx="80" cy="166" rx="14" ry="11" fill="#FFF8F0"/>
+              <ellipse cx="120" cy="166" rx="14" ry="11" fill="#FFF8F0"/>
+            </svg>
+          </div>
+
+          <!-- Dialog Speech -->
+          <div class="shiba-speech-bubble" id="dog-speech">
+            汪！今天有好好吃飽嗎？不用為記帳感到壓力，小柴會一直陪著你汪！🐾
+          </div>
+
+          <!-- Emotional Consultation Buttons -->
+          <div class="emotional-snuffer-bar">
+            <span class="snuffer-label">🐾 想花錢解壓？讓阿柴陪你聊聊：</span>
+            <button class="snuffer-btn" data-ask="boba">🧋 想點杯手搖飲喝</button>
+            <button class="snuffer-btn" data-ask="reward">🎁 想買東西犒賞自己</button>
+            <button class="snuffer-btn" data-ask="anxious">😰 感覺錢花太快有點焦慮</button>
+            <button class="snuffer-btn" data-ask="worth">🤔 這筆到底該不該刷</button>
+          </div>
+        </div>
+
+        <!-- 2. One-Sentence Lazy Input (置頂一句話懶人快記框) -->
+        <div class="quick-input-card">
+          <div class="quick-input-title">
+            <h3><span>⚡</span> 一句話懶人快記</h3>
+            <span class="quick-input-hint">💡 支援自然輸入「珍奶 65」或只打數字「150」按 Enter 直接入帳</span>
+          </div>
+
+          <form id="lazy-quick-form" class="quick-input-row">
+            <input 
+              type="text" 
+              class="quick-text-input" 
+              id="lazy-quick-input" 
+              placeholder="例如：午餐便當 120、拿鐵 85、或直接輸入 150..."
+              autocomplete="off"
+            >
+            <button type="submit" class="quick-submit-btn" id="lazy-quick-submit">
+              <span>記一筆 ↵</span>
+            </button>
+            <button type="button" class="quick-voice-btn" id="voice-input" title="啟動語音辨識直接說">
+              <span>🎙️ 說一句</span>
+            </button>
+          </form>
+
+          <!-- Top 5 Most Frequent / Common Chips (一鍵直接入帳，不需開彈窗) -->
+          <div class="quick-capsules-row">
+            <span class="capsules-label">⚡ 常用一鍵入帳：</span>
+            <div class="capsules-list" id="dynamic-capsules">
+              <!-- Dynamically populated from Top 5 frequent transactions -->
             </div>
-
-            <!-- Emotional Spending Quick Buttons -->
-            <div class="ask-shiba-bar">
-              <span style="font-size:11.5px;color:var(--muted);width:100%;font-weight:700;">🐾 想花錢？點擊讓柴柴幫你理性滅火：</span>
-              <button class="shiba-pill-btn" data-ask="boba">🧋 想喝大杯手搖飲</button>
-              <button class="shiba-pill-btn" data-ask="reward">🎁 想買禮物犒賞自己</button>
-              <button class="shiba-pill-btn" data-ask="anxious">😰 月底快吃土好焦慮</button>
-              <button class="shiba-pill-btn" data-ask="worth">🤔 這筆到底該不該買</button>
-            </div>
-          </div>
-
-          <!-- Shiba Animated Avatar -->
-          <div class="dog-scene">
-            <div class="shiba-avatar-wrapper" id="shiba-avatar-btn" title="摸摸柴柴！">
-              <div class="pet-hint">點我摸摸頭 🐾</div>
-              <!-- Scalable Custom Shiba SVG -->
-              <svg class="shiba-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background soft halo -->
-                <circle cx="100" cy="100" r="88" fill="#FFF0E4" fill-opacity="0.7"/>
-                
-                <!-- Shiba Body & Cheeks -->
-                <ellipse cx="100" cy="145" rx="55" ry="40" fill="#E88B52"/>
-                <ellipse cx="100" cy="155" rx="36" ry="26" fill="#FFF8F0"/>
-                
-                <!-- Shiba Ears -->
-                <path id="ear-left" d="M50 78 C42 42 66 32 82 56 Z" fill="#D97736"/>
-                <path d="M56 72 C50 48 68 40 76 58 Z" fill="#FFF0E4"/>
-                <path id="ear-right" d="M150 78 C158 42 134 32 118 56 Z" fill="#D97736"/>
-                <path d="M144 72 C150 48 132 40 124 58 Z" fill="#FFF0E4"/>
-
-                <!-- Shiba Head Base -->
-                <ellipse cx="100" cy="102" rx="58" ry="48" fill="#E88B52"/>
-                
-                <!-- White Muzzle / Cheek Fluff -->
-                <path d="M55 108 C55 136 78 142 100 142 C122 142 145 136 145 108 C145 92 130 84 100 84 C70 84 55 92 55 108 Z" fill="#FFF8F0"/>
-                
-                <!-- Eyebrows (Signature Shiba White Dots) -->
-                <circle cx="78" cy="74" r="7" fill="#FFF8F0"/>
-                <circle cx="122" cy="74" r="7" fill="#FFF8F0"/>
-
-                <!-- Eyes (Dynamic by State) -->
-                <g id="shiba-eyes">
-                  <!-- Normal / Happy Open Eyes -->
-                  <ellipse cx="76" cy="92" rx="6" ry="7" fill="#322A24"/>
-                  <circle cx="74" cy="89" r="2.2" fill="#FFFFFF"/>
-                  <ellipse cx="124" cy="92" rx="6" ry="7" fill="#322A24"/>
-                  <circle cx="122" cy="89" r="2.2" fill="#FFFFFF"/>
-                </g>
-
-                <!-- Cute Shiba Nose & Mouth -->
-                <path d="M93 105 C93 102 107 102 107 105 C107 110 93 110 93 105 Z" fill="#322A24"/>
-                <path d="M100 108 L100 115" stroke="#322A24" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M92 116 C95 120 100 120 100 115 C100 120 105 120 108 116" stroke="#322A24" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-
-                <!-- Blush / Rosy Cheeks -->
-                <ellipse id="blush-left" cx="62" cy="108" rx="8" ry="5" fill="#F43F5E" fill-opacity="0.3"/>
-                <ellipse id="blush-right" cx="138" cy="108" rx="8" ry="5" fill="#F43F5E" fill-opacity="0.3"/>
-
-                <!-- Paws resting -->
-                <ellipse cx="80" cy="165" rx="14" ry="11" fill="#FFF8F0"/>
-                <ellipse cx="120" cy="165" rx="14" ry="11" fill="#FFF8F0"/>
-              </svg>
-            </div>
-            <!-- Speech Bubble -->
-            <div class="dog-speech" id="dog-speech">汪！今天每一筆花費我都有替你看緊喔！🐾</div>
           </div>
         </div>
 
-        <!-- Quick Expense Chips Panel -->
-        <div class="quick-chips-panel">
-          <div class="chips-label">⚡ 常用一鍵記：</div>
-          <div class="chips-container">
-            <button class="chip-item" data-quick="早餐,65,餐飲">🥪 活力早餐 $65</button>
-            <button class="chip-item" data-quick="午餐便當,120,餐飲">🍱 午餐便當 $120</button>
-            <button class="chip-item" data-quick="大杯拿鐵,85,餐飲">☕ 大杯拿鐵 $85</button>
-            <button class="chip-item" data-quick="手搖飲,60,餐飲">🧋 珍珠奶茶 $60</button>
-            <button class="chip-item" data-quick="捷運公車,30,交通">🚇 捷運悠遊卡 $30</button>
-            <button class="chip-item" data-quick="超商生活,100,日用品">🏪 超商採買 $100</button>
-          </div>
-        </div>
-
-        <!-- Stats Overview Cards -->
-        <div class="section-heading">
-          <div>
-            <h2>本月收支數據庫</h2>
-            <div class="section-sub" id="month-label">載入中…</div>
-          </div>
-          <button class="text-button" data-goto="budgets">調整目標額度 →</button>
-        </div>
-        <div class="stats-grid">
-          <article class="stat-card">
-            <div class="stat-top"><span>本月累積支出</span><span class="stat-icon">🧾</span></div>
-            <div class="stat-number" id="stat-spent">$0</div>
-            <div class="stat-foot" id="stat-spent-note">共記下 0 筆花費</div>
-          </article>
-          <article class="stat-card">
-            <div class="stat-top"><span>預算結餘</span><span class="stat-icon">💰</span></div>
-            <div class="stat-number" id="stat-left">$0</div>
-            <div class="stat-foot" id="stat-left-note">—</div>
-          </article>
-          <article class="stat-card">
-            <div class="stat-top"><span>本日建議花費額度</span><span class="stat-icon">🌱</span></div>
-            <div class="stat-number" id="stat-forecast">$0</div>
-            <div class="stat-foot" id="stat-forecast-note">依本月剩餘天數平均調配</div>
-          </article>
-        </div>
-
-        <!-- Visual Analytics Grid -->
-        <div class="content-grid">
-          <article class="panel">
-            <div class="panel-heading">
-              <div>
-                <h3>近 7 日花費節奏</h3>
-                <p>觀察每日開銷起伏，保持適當節奏</p>
+        <!-- 3. Flexible Living Allowance & Daily Safe Spending (彈性生活費＋每日安心花) -->
+        <div class="allowance-grid">
+          <!-- Card A: Daily Safe Spending -->
+          <article class="allowance-card">
+            <div>
+              <div class="card-eyebrow">
+                <span>🌱 每日安心花額度</span>
+                <span id="days-countdown-tag" style="background:var(--sage-pale);color:#436947;padding:2px 10px;border-radius:99px;font-size:11.5px;">計算中</span>
               </div>
-              <span style="font-size:20px;">🌤️</span>
+              <div class="main-metric" style="color:var(--orange-dark);margin:10px 0 4px;">
+                <span id="daily-allowance-val">$0</span>
+                <span class="metric-sub">/ 天</span>
+              </div>
+              <p class="metric-note" id="daily-allowance-note">
+                距離月底還有 X 天，照這個節奏花費最無痛自在。
+              </p>
+            </div>
+            <div style="font-size:12px;color:var(--muted);background:var(--bg);padding:10px 14px;border-radius:var(--radius-sm);">
+              💬 阿柴悄悄話：省下一筆是開心，多吃一頓是犒賞，放寬心就好！
+            </div>
+          </article>
+
+          <!-- Card B: Monthly Flexible Living Budget -->
+          <article class="allowance-card">
+            <div>
+              <div class="card-eyebrow">
+                <span>🎯 本月彈性生活費</span>
+                <button class="text-button" id="edit-budget-direct-btn">直接修改目標 ✎</button>
+              </div>
+              <div class="main-metric" style="margin:10px 0 4px;">
+                <span id="monthly-budget-val">$0</span>
+                <span class="metric-sub" id="monthly-spent-ratio">（已支用 0%）</span>
+              </div>
+              <!-- Quick Fine-tune Buttons (一鍵微調) -->
+              <div class="budget-adjust-row" style="margin-top:6px;">
+                <button class="adjust-pill" id="btn-adjust-plus500">＋500 放寬一點 ✨</button>
+                <button class="adjust-pill" id="btn-adjust-minus500">－500 省錢模式 🌿</button>
+                <button class="adjust-pill" id="btn-adjust-plus1000">＋1,000 大餐月 🍱</button>
+              </div>
+            </div>
+
+            <div class="progress-bar-box">
+              <div class="progress-track">
+                <div class="progress-fill" id="dashboard-progress-fill"></div>
+              </div>
+              <div class="progress-meta">
+                <span>本月累計花費 <strong id="dashboard-spent-val">$0</strong></span>
+                <span id="dashboard-status-label">狀態平穩</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4. Visual Charts -->
+        <div class="content-grid">
+          <!-- 7-Day Rhythm -->
+          <article class="panel">
+            <div class="section-heading" style="margin-bottom:14px;">
+              <div>
+                <h2>近 7 日生活節奏</h2>
+                <div class="section-sub">看看這幾天的開銷起伏，感受生活步調</div>
+              </div>
+              <span style="font-size:22px;">🌤️</span>
             </div>
             <div class="chart" id="weekly-chart" role="img" aria-label="近7日支出長條圖"></div>
           </article>
+
+          <!-- Category Donut -->
           <article class="panel">
-            <div class="panel-heading">
+            <div class="section-heading" style="margin-bottom:14px;">
               <div>
-                <h3>本月支出分類占比</h3>
-                <p>看懂錢錢究竟都流向哪裡</p>
+                <h2>開銷都去哪兒了</h2>
+                <div class="section-sub">生活各面向的支出比例一目了然</div>
               </div>
-              <span style="font-size:20px;">🥧</span>
+              <span style="font-size:22px;">🥧</span>
             </div>
             <div class="category-content">
-              <div class="donut" id="donut" role="img" aria-label="本月支出圓餅圖">
+              <div class="donut" id="donut" role="img" aria-label="支出圓餅圖">
                 <div class="donut-hole">
                   <strong id="donut-total">$0</strong>
                   <span>總支出</span>
@@ -1430,42 +1444,46 @@
           </article>
         </div>
 
-        <!-- Recent Transactions -->
+        <!-- 5. Recent Transactions -->
         <div class="section-heading">
           <div>
-            <h2>最新記帳明細</h2>
-            <div class="section-sub">點擊鉛筆圖示可直接編輯修改</div>
+            <h2>最新生活紀錄</h2>
+            <div class="section-sub">點擊 ✏️ 可直接修正金額或品名</div>
           </div>
-          <button class="text-button" data-goto="transactions">查看所有記錄 →</button>
+          <button class="text-button" data-goto="transactions">瀏覽全部紀錄 →</button>
         </div>
         <section class="panel">
           <div class="transaction-list" id="recent-list"></div>
         </section>
 
-        <!-- Shiba Wisdom Banner -->
+        <!-- 6. Shiba Warm Wisdom Card -->
         <div class="tip-card">
           <div class="tip-icon">🐾</div>
           <div>
-            <div class="tip-title">柴犬守護員的心得備忘錄</div>
-            <div class="tip-text" id="saving-tip">記下一筆支出，小柴就能幫你找到適合自己的省錢小方法。</div>
+            <div class="tip-title">阿柴的生活備忘小卡</div>
+            <div class="tip-text" id="saving-tip">
+              生活本就起起伏伏，按自己的舒服節奏過日子就好汪！每一筆記錄都是在溫柔照顧自己。
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 2: TRANSACTIONS LIST -->
+      <!-- ===================================================================
+           VIEW 2: TRANSACTIONS LIST (開銷明細)
+           =================================================================== -->
       <section class="view" id="view-transactions">
         <div class="section-heading">
           <div>
-            <h2>完整帳務清單</h2>
-            <div class="section-sub">支援關鍵字搜尋、分類過濾、編輯與明細匯出</div>
+            <h2>完整開銷明細</h2>
+            <div class="section-sub">關鍵字搜尋、分類過濾、就地編輯與報表匯出</div>
           </div>
         </div>
 
         <div class="toolbar">
           <div class="toolbar-left">
-            <input class="search-input" id="search-transactions" type="search" placeholder="🔍 搜尋品項、店家名稱…">
+            <input class="search-input" id="search-transactions" type="search" placeholder="🔍 搜尋開銷品項、店家名稱…">
             <select class="filter-select" id="filter-category">
-              <option value="">所有分類</option>
+              <option value="">所有生活類別</option>
               <option>餐飲</option>
               <option>交通</option>
               <option>購物</option>
@@ -1475,11 +1493,11 @@
               <option>其他</option>
             </select>
           </div>
-          <div class="toolbar-right">
-            <button class="outline-btn" id="export-csv-btn" title="匯出 Excel 相容之 CSV 檔案">
-              <span>📥 匯出 CSV</span>
+          <div class="toolbar-right" style="display:flex;gap:8px;">
+            <button class="outline-btn" id="export-csv-btn" title="匯出 Excel 相容之 CSV 檔案（防亂碼）">
+              <span>📥 匯出 Excel (CSV)</span>
             </button>
-            <button class="primary-button" data-add-btn>
+            <button class="primary-button" id="open-add-modal-btn">
               <span>＋ 記一筆</span>
             </button>
           </div>
@@ -1487,68 +1505,80 @@
 
         <div class="panel table-panel">
           <div class="table-head">
-            <span>消費品項 / 分類</span>
+            <span>生活品項 / 備註</span>
             <span>日期</span>
-            <span>分類</span>
+            <span>類別</span>
             <span style="text-align:right;">金額與操作</span>
           </div>
           <div id="all-transactions"></div>
         </div>
       </section>
 
-      <!-- VIEW 3: BUDGETS -->
-      <section class="view" id="view-budgets">
+      <!-- ===================================================================
+           VIEW 3: ALLOWANCE / BUDGET (生活費調整)
+           =================================================================== -->
+      <section class="view" id="view-allowance">
         <div class="section-heading">
           <div>
-            <h2>預算配額管理</h2>
-            <div class="section-sub">為每項慾望設立守護邊界，未雨綢繆</div>
+            <h2>生活費彈性微調</h2>
+            <div class="section-sub">拋棄僵化配額限制，隨心情與現實彈性調整</div>
           </div>
-          <button class="text-button" data-goto="settings">調整配額設定 →</button>
         </div>
 
-        <!-- Overall Budget Card -->
-        <div class="panel">
-          <div class="panel-heading">
-            <div>
-              <h3>全月總預算進度條</h3>
-              <p id="budget-month-caption">每月 1 號自動重新累計</p>
-            </div>
-            <span style="font-size:22px;">🎯</span>
-          </div>
-          <div class="budget-figures">
-            <div class="budget-spent" id="budget-total-spent">$0</div>
-            <div class="budget-limit">/ 總上限 <span id="budget-total-limit">$0</span></div>
-          </div>
-          <div class="progress-track" style="height:12px;margin:12px 0 8px;">
-            <div class="progress-fill" id="budget-total-progress"></div>
-          </div>
-          <div class="budget-remaining" id="budget-total-remaining">計算中…</div>
-        </div>
-
-        <div class="section-heading" style="margin-top:20px;">
+        <!-- Master Allowance Panel -->
+        <div class="panel" style="display:flex;flex-direction:column;gap:18px;">
           <div>
-            <h2>七大分類預算執行率</h2>
-            <div class="section-sub">個別類別達 80% 時小柴會主動發出警戒！</div>
+            <h3 style="font-size:17px;font-weight:850;margin-bottom:4px;">🎯 本月生活費目標</h3>
+            <p style="font-size:13px;color:var(--muted);">給自己一個舒服的參考框架，不必為每一分錢緊繃自責。</p>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-size:18px;font-weight:800;">NT$</span>
+              <input type="number" id="allowance-input-field" class="quick-text-input" style="width:180px;font-size:20px;font-weight:850;" step="500" min="500">
+            </div>
+            <button class="primary-button" id="save-allowance-btn">
+              <span>確認設定</span>
+            </button>
+          </div>
+
+          <!-- Quick Preset Buttons -->
+          <div class="budget-adjust-row" style="margin-top:6px;">
+            <button class="adjust-pill" id="view3-adjust-plus500">＋500 放寬一點 ✨</button>
+            <button class="adjust-pill" id="view3-adjust-minus500">－500 省錢模式 🌿</button>
+            <button class="adjust-pill" id="view3-adjust-plus1000">＋1,000 大餐犒賞月 🍱</button>
+            <button class="adjust-pill" id="view3-adjust-reset">重設為 10,000 標竿 🐾</button>
+          </div>
+
+          <div class="tip-card" style="margin-top:10px;">
+            <div class="tip-icon">💡</div>
+            <div>
+              <div class="tip-title">去壓力記帳哲學</div>
+              <div class="tip-text">
+                傳統記帳常為「餐飲超標」、「娛樂超標」設定嚴厲懲罰，但現實中大學生考試週、朋友生日難免多花。小柴將焦點放在「整個月的總體安心」與「每日可花額度」，讓財務管理真正可長可久！
+              </div>
+            </div>
           </div>
         </div>
-        <div class="budget-layout" id="budget-categories"></div>
       </section>
 
-      <!-- VIEW 4: REPORTS & INSIGHTS -->
+      <!-- ===================================================================
+           VIEW 4: REPORTS (生活開銷分布)
+           =================================================================== -->
       <section class="view" id="view-reports">
         <div class="section-heading">
           <div>
-            <h2>深度收支報告</h2>
-            <div class="section-sub">梳理消費脈絡，掌握金錢流向</div>
+            <h2>生活開銷分布指南</h2>
+            <div class="section-sub">了解錢錢的溫暖流向，看看都換成了哪些美好生活體驗</div>
           </div>
         </div>
 
         <div class="content-grid">
           <article class="panel">
-            <div class="panel-heading">
+            <div class="section-heading" style="margin-bottom:14px;">
               <div>
                 <h3>本月各類開銷結構</h3>
-                <p>各分類占總支出的實際百分比</p>
+                <p class="section-sub">各類別占總支出的百分比</p>
               </div>
             </div>
             <div class="category-content">
@@ -1562,10 +1592,10 @@
             </div>
           </article>
           <article class="panel">
-            <div class="panel-heading">
+            <div class="section-heading" style="margin-bottom:14px;">
               <div>
-                <h3>需要 vs 想要 比例分析</h3>
-                <p>理性檢視生活必需品與犒賞開銷</p>
+                <h3>日常必需 vs 小確幸比例</h3>
+                <p class="section-sub">看看必需花費與犒賞自己的平衡</p>
               </div>
             </div>
             <div id="needs-wants" style="padding-top:10px;"></div>
@@ -1575,90 +1605,83 @@
         <div class="tip-card" style="margin-top:10px;">
           <div class="tip-icon">🐾</div>
           <div>
-            <div class="tip-title">柴犬守護員的財務建言</div>
-            <div class="tip-text" id="report-tip">多記帳、多回顧，小柴會隨時為你提供省錢建議！</div>
+            <div class="tip-title">阿柴的陪伴心得</div>
+            <div class="tip-text" id="report-tip">
+              有記錄就是最好的開始！小柴隨時在這裡陪你看顧錢包汪！
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- VIEW 5: SETTINGS -->
+      <!-- ===================================================================
+           VIEW 5: SETTINGS (帳本設定與安全備份)
+           =================================================================== -->
       <section class="view" id="view-settings">
         <div class="section-heading">
           <div>
-            <h2>系統與資料設定</h2>
-            <div class="section-sub">自訂預算上限、管理本地備份與檔案還原</div>
-          </div>
-        </div>
-
-        <div class="panel settings-panel">
-          <div class="setting-row">
-            <div>
-              <strong>每月全額總預算</strong>
-              <span>設定讓自己安心花費的月度上限</span>
-            </div>
-            <input class="setting-input" type="number" id="setting-total-budget" min="100" step="500">
-          </div>
-          <div id="category-settings"></div>
-          <div style="display:flex;justify-content:flex-end;margin-top:10px;">
-            <button class="primary-button" id="save-settings">
-              <span>💾 儲存預算設定</span>
-            </button>
+            <h2>資料備份與安全管理</h2>
+            <div class="section-sub">離線備份、JSON 檔案還原與 CSV 匯出</div>
           </div>
         </div>
 
         <!-- Data Backup & Restore -->
-        <div class="section-heading" style="margin-top:20px;">
+        <div class="panel" style="display:flex;flex-direction:column;gap:16px;">
           <div>
-            <h2>資料備份與安全還原</h2>
-            <div class="section-sub">隨時備份帳本到電腦，更換裝置也不怕資料丟失</div>
+            <h3 style="font-size:16px;font-weight:800;margin-bottom:4px;">💾 資料轉移與本機備份</h3>
+            <p style="font-size:13px;color:var(--muted);">隨時將帳本資料匯出儲存，更換電腦或瀏覽器也不怕記錄丟失。</p>
           </div>
-        </div>
-        <div class="panel" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-          <button class="outline-btn" id="backup-json-btn">
-            <span>💾 匯出完整 JSON 備份檔</span>
-          </button>
-          <label class="outline-btn" style="cursor:pointer;">
-            <span>📂 匯入 JSON 備份檔</span>
-            <input type="file" id="import-json-input" accept=".json" style="display:none;">
-          </label>
-          <button class="outline-btn" id="export-csv-btn2">
-            <span>📊 匯出 CSV 試算表</span>
-          </button>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <button class="outline-btn" id="backup-json-btn">
+              <span>💾 匯出完整 JSON 備份檔</span>
+            </button>
+            <label class="outline-btn" style="cursor:pointer;">
+              <span>📂 匯入還原 JSON 備份檔</span>
+              <input type="file" id="import-json-input" accept=".json" style="display:none;">
+            </label>
+            <button class="outline-btn" id="export-csv-btn2">
+              <span>📊 匯出 Excel (CSV) 試算表</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Reset Danger Zone -->
-        <div class="section-heading" style="margin-top:20px;">
+        <!-- Sound Settings -->
+        <div class="panel" style="display:flex;align-items:center;justify-content:space-between;">
           <div>
-            <h2 style="color:var(--red);">危險區域</h2>
-            <div class="section-sub">清除此裝置上的所有帳本紀錄</div>
+            <strong style="font-size:15px;display:block;">🔊 原生音效開關</strong>
+            <span style="font-size:12.5px;color:var(--muted);">透過 Web Audio API 純代碼合成清脆金幣聲與小柴汪汪聲</span>
           </div>
+          <button class="outline-btn" id="sound-toggle-btn2">切換開關</button>
         </div>
-        <div class="panel">
-          <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">此動作將永久清空此瀏覽器上的記帳與自訂預算，若需重新開始請謹慎操作。</p>
-          <button class="secondary-button" id="reset-data" style="color:var(--red);border:1px solid var(--red-pale);">
-            <span>🗑️ 清除所有記帳資料並重設</span>
+
+        <!-- Danger Zone -->
+        <div class="panel" style="border-color:#f5c2b7;">
+          <h3 style="font-size:15px;font-weight:800;color:#c53b27;margin-bottom:4px;">🗑️ 清除所有記帳資料</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">此動作將永久清除此瀏覽器上的記帳與設定，若需重新開始請謹慎操作。</p>
+          <button class="secondary-button" id="reset-data" style="color:#c53b27;border:1px solid #f8d7da;">
+            <span>清除所有記錄並重設帳本</span>
           </button>
         </div>
       </section>
+
     </main>
   </div>
 
-  <!-- Mobile Navigation Bar -->
+  <!-- Mobile Bottom Nav -->
   <nav class="mobile-nav" aria-label="手機主要導覽">
-    <button class="nav-button active" data-view="dashboard"><span class="nav-icon">⌂</span>總覽</button>
+    <button class="nav-button active" data-view="dashboard"><span class="nav-icon">⌂</span>首頁</button>
     <button class="nav-button" data-view="transactions"><span class="nav-icon">↕</span>明細</button>
-    <button class="nav-button" data-view="budgets"><span class="nav-icon">◉</span>預算</button>
-    <button class="nav-button" data-view="reports"><span class="nav-icon">▥</span>分析</button>
+    <button class="nav-button" data-view="allowance"><span class="nav-icon">🌱</span>生活費</button>
+    <button class="nav-button" data-view="reports"><span class="nav-icon">▥</span>分布</button>
     <button class="nav-button" data-view="settings"><span class="nav-icon">⚙</span>設定</button>
   </nav>
 
-  <!-- Transaction Edit/Add Modal -->
+  <!-- Edit / Detailed Modal -->
   <div class="modal-backdrop" id="transaction-modal" role="presentation">
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-top">
         <div>
-          <h2 id="modal-title">記下一筆花費</h2>
-          <p>每一筆紀錄，都是對自己生活的溫柔打理。</p>
+          <h2 id="modal-title">詳細記下一筆</h2>
+          <p>每一筆紀錄，都是對自己生活的溫柔照料。</p>
         </div>
         <button class="close-button" type="button" id="close-modal" aria-label="關閉視窗">✕</button>
       </div>
@@ -1667,20 +1690,15 @@
         <input type="hidden" id="tx-edit-id" name="id">
         <div class="form-grid">
           <div class="field full">
-            <label for="tx-name">消費品項 / 店家名稱</label>
-            <div class="voice-row">
-              <input id="tx-name" name="name" required maxlength="60" placeholder="例如：手搖飲料、超市採買、捷運加值">
-              <button type="button" class="voice-button" id="voice-input" title="啟動瀏覽器語音辨識">
-                <span>🎙️ 說一句</span>
-              </button>
-            </div>
+            <label for="tx-name">消費品項 / 店家說明</label>
+            <input id="tx-name" name="name" required maxlength="60" placeholder="例如：手搖飲料、早午餐、捷運加值">
           </div>
           <div class="field">
             <label for="tx-amount">花費金額 (NT$)</label>
             <input id="tx-amount" name="amount" type="number" required min="1" max="99999999" step="1" inputmode="numeric" placeholder="例如：65">
           </div>
           <div class="field">
-            <label for="tx-category">消費類別</label>
+            <label for="tx-category">生活類別</label>
             <select id="tx-category" name="category">
               <option>餐飲</option>
               <option>交通</option>
@@ -1697,10 +1715,6 @@
           </div>
         </div>
 
-        <p style="font-size:11px;color:var(--muted);margin-top:14px;">
-          💡 提示：點擊「🎙️ 說一句」可用語音快速說出「午餐便當120元」，小柴會自動填寫！
-        </p>
-
         <div class="modal-actions">
           <button type="button" class="secondary-button" id="cancel-modal">取消</button>
           <button class="primary-button" type="submit" id="modal-submit-btn">
@@ -1715,23 +1729,23 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- =====================================================================
-       Application Logic & Controller
+       Application Logic Controller (Zero External Script Dependency)
        ===================================================================== -->
   <script>
     (() => {
       "use strict";
 
-      const STORAGE_KEY = "shiba-ledger-v2";
+      const STORAGE_KEY = "shiba-ledger-v3";
 
       // Categories Definition
       const categories = [
-        { name: "餐飲", icon: "🍜", color: "#e88b52", limit: 4500 },
-        { name: "交通", icon: "🚇", color: "#8caa8f", limit: 1200 },
-        { name: "購物", icon: "🛍️", color: "#91a9bd", limit: 2000 },
-        { name: "娛樂", icon: "🎧", color: "#b49ab8", limit: 1000 },
-        { name: "日用品", icon: "🧴", color: "#f4b251", limit: 1000 },
-        { name: "居住", icon: "🏠", color: "#7b9eb5", limit: 4500 },
-        { name: "其他", icon: "✨", color: "#c4a3c8", limit: 800 }
+        { name: "餐飲", icon: "🍜", color: "#e88b52" },
+        { name: "交通", icon: "🚇", color: "#8caa8f" },
+        { name: "購物", icon: "🛍️", color: "#91a9bd" },
+        { name: "娛樂", icon: "🎧", color: "#b49ab8" },
+        { name: "日用品", icon: "🧴", color: "#f4b251" },
+        { name: "居住", icon: "🏠", color: "#7b9eb5" },
+        { name: "其他", icon: "✨", color: "#c4a3c8" }
       ];
       const icons = Object.fromEntries(categories.map(c => [c.name, c.icon]));
 
@@ -1756,7 +1770,7 @@
       const money = val => "$" + Math.round(Number(val) || 0).toLocaleString("zh-TW");
       const escapeHTML = str => String(str).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-      // Sound Engine (Web Audio API - 0 external asset dependency)
+      // Sound Engine (Web Audio API - Pure native synthesis)
       let audioCtx = null;
       let soundEnabled = true;
 
@@ -1785,14 +1799,12 @@
           gain.connect(audioCtx.destination);
           osc.start(audioCtx.currentTime + delay);
           osc.stop(audioCtx.currentTime + delay + duration);
-        } catch (e) {
-          // Audio blocked or unsupported
-        }
+        } catch (e) {}
       };
 
       const playCoinSound = () => {
-        playTone(987.77, "sine", 0.1, 0);    // B5
-        playTone(1318.51, "sine", 0.25, 0.08); // E6
+        playTone(987.77, "sine", 0.09, 0);    // B5
+        playTone(1318.51, "sine", 0.22, 0.07); // E6
       };
 
       const playBarkSound = () => {
@@ -1804,20 +1816,18 @@
         playTone(220, "sine", 0.15, 0);
       };
 
-      // Initial Seeds
+      // Default Seed Data
       const seed = () => ({
-        budget: 15000,
-        limits: Object.fromEntries(categories.map(c => [c.name, c.limit])),
+        budget: 10000, // Monthly flexible living budget
         sound: true,
-        affinity: 12,
+        affinity: 18,
         transactions: [
-          { id: "seed-1", name: "活力早午餐・晨光咖啡", amount: 185, category: "餐飲", date: offsetDate(-1) },
-          { id: "seed-2", name: "捷運悠遊卡自動加值", amount: 500, category: "交通", date: offsetDate(-1) },
-          { id: "seed-3", name: "大杯微糖鮮奶茶", amount: 65, category: "餐飲", date: offsetDate(-2) },
-          { id: "seed-4", name: "書店文具小選物", amount: 380, category: "購物", date: offsetDate(-3) },
-          { id: "seed-5", name: "超市蔬果生活日用品", amount: 420, category: "日用品", date: offsetDate(-4) },
-          { id: "seed-6", name: "週末新上映電影票", amount: 330, category: "娛樂", date: offsetDate(-5) },
-          { id: "seed-7", name: "房租管理水電費", amount: 4500, category: "居住", date: offsetDate(-6) }
+          { id: "seed-1", name: "活力早午餐・晨光拿鐵", amount: 155, category: "餐飲", date: offsetDate(-1) },
+          { id: "seed-2", name: "捷運悠遊卡自動加值", amount: 200, category: "交通", date: offsetDate(-1) },
+          { id: "seed-3", name: "珍珠奶茶大杯微糖", amount: 65, category: "餐飲", date: offsetDate(-2) },
+          { id: "seed-4", name: "校園文具小筆記本", amount: 120, category: "購物", date: offsetDate(-3) },
+          { id: "seed-5", name: "超商衛生紙日用品", amount: 180, category: "日用品", date: offsetDate(-4) },
+          { id: "seed-6", name: "週末朋友聚會披薩", amount: 350, category: "餐飲", date: offsetDate(-5) }
         ]
       });
 
@@ -1825,16 +1835,29 @@
       const loadState = () => {
         try {
           const raw = localStorage.getItem(STORAGE_KEY);
-          if (!raw) return seed();
+          if (!raw) {
+            // Check legacy v2 storage migration
+            const oldRaw = localStorage.getItem("shiba-ledger-v2");
+            if (oldRaw) {
+              const oldData = JSON.parse(oldRaw);
+              return {
+                ...seed(),
+                budget: Number(oldData.budget) || 10000,
+                affinity: Number(oldData.affinity) || 18,
+                transactions: Array.isArray(oldData.transactions) ? oldData.transactions : seed().transactions
+              };
+            }
+            return seed();
+          }
           const parsed = JSON.parse(raw);
           return {
             ...seed(),
             ...parsed,
-            limits: { ...seed().limits, ...(parsed.limits || {}) },
-            affinity: Number(parsed.affinity) || 12
+            budget: Number(parsed.budget) || 10000,
+            affinity: Number(parsed.affinity) || 18
           };
         } catch (e) {
-          console.error("載入本機記帳失敗，重設為預設值：", e);
+          console.error("載入失敗：", e);
           return seed();
         }
       };
@@ -1849,7 +1872,7 @@
           return true;
         } catch (e) {
           console.error("儲存失敗：", e);
-          showToast("⚠️ 儲存失敗，請檢查瀏覽器儲存空間");
+          showToast("⚠️ 儲存失敗，請檢查瀏覽器空間");
           return false;
         }
       };
@@ -1861,10 +1884,10 @@
         toast.innerHTML = message;
         toast.classList.add("show");
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
       };
 
-      // Helpers
+      // Calculations Helpers
       const thisMonth = dateStr => dateStr.slice(0, 7) === dateISO(today).slice(0, 7);
       const monthTransactions = () => state.transactions.filter(tx => thisMonth(tx.date));
       const totalSpent = () => monthTransactions().reduce((sum, tx) => sum + Number(tx.amount), 0);
@@ -1872,63 +1895,175 @@
         categories.map(c => [c.name, monthTransactions().filter(tx => tx.category === c.name).reduce((sum, tx) => sum + Number(tx.amount), 0)])
       );
 
-      // Shiba Emotional Reactions & Advice Generator
-      const updateDogMood = (amountLeft, ratio) => {
-        const titleEl = document.getElementById("hero-title");
-        const msgEl = document.getElementById("hero-message");
+      // Smart Natural Language & Pure Digits Parser
+      const parseQuickText = raw => {
+        let text = raw.trim();
+        if (!text) return null;
+
+        // 1. Pure numbers (e.g. "150", "$150", "150元", "150塊")
+        const pureNumMatch = text.match(/^\$?\s*(\d+)\s*(?:元|塊)?$/);
+        if (pureNumMatch) {
+          return {
+            name: "隨手花費",
+            amount: parseInt(pureNumMatch[1], 10),
+            category: "其他",
+            date: dateISO(today)
+          };
+        }
+
+        // 2. Text with embedded numbers (e.g. "珍奶 65", "午餐便當 120", "65 早餐", "Uber 180元")
+        const numMatch = text.match(/(\d+)\s*(?:元|塊)?/);
+        if (!numMatch) return null;
+
+        const amount = parseInt(numMatch[1], 10);
+        let name = text.replace(numMatch[0], "").replace(/[\$元塊]/g, "").trim();
+        if (!name) name = "隨手花費";
+
+        // Auto categorize based on keywords
+        let category = "其他";
+        if (/餐|飯|麵|早|午|晚|便當|珍奶|奶茶|飲料|拿鐵|咖啡|茶|吃|壽司|火鍋|麵包|蛋|吐司|宵夜|麥當勞|肯德基|subway|吃到飽|零食|下午茶/i.test(name)) {
+          category = "餐飲";
+        } else if (/車|捷運|公車|計程車|uber|高鐵|火車|悠遊卡|加油|油錢|停車|機車|客運/i.test(name)) {
+          category = "交通";
+        } else if (/衣服|鞋|包|網購|蝦皮|淘寶|買|飾品|手錶|美妝|藥妝/i.test(name)) {
+          category = "購物";
+        } else if (/電影|遊戲|ktv|唱歌|展覽|玩具|娛樂|課金|netflix|spotify|disney|漫畫/i.test(name)) {
+          category = "娛樂";
+        } else if (/衛生紙|洗髮|沐浴|牙膏|超商|7-11|全家|全聯|家樂福|日用|生活用品|洗碗/i.test(name)) {
+          category = "日用品";
+        } else if (/房租|水費|電費|瓦斯|網路|宿舍|管理費/i.test(name)) {
+          category = "居住";
+        }
+
+        return { name, amount, category, date: dateISO(today) };
+      };
+
+      // Top 5 Frequent Items Calculation
+      const getFrequentItems = () => {
+        const counts = {};
+        state.transactions.forEach(tx => {
+          const key = `${tx.name}|${tx.amount}|${tx.category}`;
+          counts[key] = (counts[key] || 0) + 1;
+        });
+
+        const sorted = Object.entries(counts)
+          .sort((a, b) => b[1] - a[1])
+          .map(([k]) => {
+            const [name, amount, category] = k.split("|");
+            return { name, amount: Number(amount), category };
+          });
+
+        const defaults = [
+          { name: "早餐", amount: 65, category: "餐飲" },
+          { name: "午餐便當", amount: 120, category: "餐飲" },
+          { name: "珍珠奶茶", amount: 60, category: "餐飲" },
+          { name: "大杯拿鐵", amount: 85, category: "餐飲" },
+          { name: "捷運通勤", amount: 30, category: "交通" },
+          { name: "超商採買", amount: 100, category: "日用品" }
+        ];
+
+        const combined = [...sorted];
+        defaults.forEach(d => {
+          if (combined.length < 5 && !combined.some(c => c.name === d.name && c.amount === d.amount)) {
+            combined.push(d);
+          }
+        });
+
+        return combined.slice(0, 5);
+      };
+
+      const renderQuickCapsules = () => {
+        const container = document.getElementById("dynamic-capsules");
+        if (!container) return;
+
+        const items = getFrequentItems();
+        container.innerHTML = items.map(item => `
+          <button class="capsule-item" data-instant="${escapeHTML(item.name)},${item.amount},${escapeHTML(item.category)}" title="點擊直接入帳">
+            <span>${icons[item.category] || "✨"}</span>
+            <span>${escapeHTML(item.name)}</span>
+            <strong style="color:var(--orange-dark);">$${item.amount}</strong>
+          </button>
+        `).join("");
+
+        // Attach instant click event
+        container.querySelectorAll("[data-instant]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const [name, amt, cat] = btn.dataset.instant.split(",");
+            addTransactionDirect(name, Number(amt), cat);
+          });
+        });
+      };
+
+      // Instant direct booking helper
+      const addTransactionDirect = (name, amount, category) => {
+        state.transactions.push({
+          id: `tx-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+          name,
+          amount,
+          category,
+          date: dateISO(today)
+        });
+        state.affinity = (state.affinity || 0) + 1;
+        if (save()) {
+          playCoinSound();
+          render();
+          showToast(`🐾 已記下「${name}」$${amount}！親密度 +1 ✨`);
+        }
+      };
+
+      // Shiba Emotional Reactions & Supportive Dialogue
+      const updateDogMood = (spent, budget) => {
         const speechEl = document.getElementById("dog-speech");
         const eyesEl = document.getElementById("shiba-eyes");
         const blushL = document.getElementById("blush-left");
         const blushR = document.getElementById("blush-right");
 
-        if (ratio >= 1) {
-          // Overbudget
-          titleEl.textContent = "預算暫時滿額了，小柴陪你一起深呼吸。";
-          msgEl.textContent = "超支並不可怕，重要的是我們誠實面對它。先暫緩非必要開銷，為月底留一盞溫暖的燈。";
-          speechEl.textContent = "嗚…雖然超支了，但小柴會一直在你身邊陪你度過！🥺";
+        const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+        const remainingDays = Math.max(1, daysInMonth - today.getDate() + 1);
+        const diff = budget - spent;
+        const ratio = budget ? spent / budget : 0;
+
+        if (spent > budget) {
+          // Beyond target: Non-judgmental, warm comfort!
+          speechEl.textContent = "這個月比較辛苦或聚餐比較多沒關係，我們下個月再一起調整就好汪！錢錢只是變成了生活的美好回憶，不用自責喔！🐾";
           if (eyesEl) {
-            // Worried tearing eyes
+            // Gentle caring smiling eyes
             eyesEl.innerHTML = `
-              <path d="M70 94 Q76 88 82 94" stroke="#322A24" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <path d="M118 94 Q124 88 130 94" stroke="#322A24" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <circle cx="76" cy="100" r="3" fill="#60A5FA"/>
+              <path d="M70 94 Q76 86 82 94" stroke="#362C25" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M118 94 Q124 86 130 94" stroke="#362C25" stroke-width="3" stroke-linecap="round" fill="none"/>
             `;
           }
-          if (blushL) blushL.style.fillOpacity = "0.15";
-          if (blushR) blushR.style.fillOpacity = "0.15";
+          if (blushL) blushL.style.fillOpacity = "0.2";
+          if (blushR) blushR.style.fillOpacity = "0.2";
         } else if (ratio >= 0.8) {
-          // Warning state
-          titleEl.textContent = "錢包想要跟你說聲貼心悄悄話。";
-          msgEl.textContent = "本月開銷已達預算 80%，每一筆新的犒賞前，不妨先想 10 秒鐘喔。";
-          speechEl.textContent = "汪！預算拉警報囉，要記得留一點應急金喔！🧐";
+          // Approaching target: Friendly nudge
+          speechEl.textContent = `汪！距離月底還有 ${remainingDays} 天，生活費已使用 ${Math.round(ratio * 100)}%。今天一起散步喝杯溫水，省下一杯手搖好不好汪？☀️`;
           if (eyesEl) {
-            // Alert eyes
+            // Open, attentive eyes
             eyesEl.innerHTML = `
-              <ellipse cx="76" cy="92" rx="7" ry="8" fill="#322A24"/>
+              <ellipse cx="76" cy="92" rx="7" ry="8" fill="#362C25"/>
               <circle cx="74" cy="88" r="2.5" fill="#FFFFFF"/>
-              <ellipse cx="124" cy="92" rx="7" ry="8" fill="#322A24"/>
+              <ellipse cx="124" cy="92" rx="7" ry="8" fill="#362C25"/>
               <circle cx="122" cy="88" r="2.5" fill="#FFFFFF"/>
             `;
           }
-          if (blushL) blushL.style.fillOpacity = "0.3";
-          if (blushR) blushR.style.fillOpacity = "0.3";
+          if (blushL) blushL.style.fillOpacity = "0.35";
+          if (blushR) blushR.style.fillOpacity = "0.35";
         } else {
-          // Healthy happy state
-          titleEl.textContent = "慢慢記，也是在好好照顧自己。";
-          msgEl.textContent = "每一筆開銷的誠實紀錄，都是邁向財務自由的小小足跡。今天也和小柴一起看顧錢包吧！";
-          speechEl.textContent = ratio > 0.5 ? "汪！預算節奏保持得很好，繼續加油喔！🐾" : "汪！有好好看顧著錢包，小柴為你感到驕傲！✨";
+          // Healthy pace: Happy!
+          speechEl.textContent = ratio > 0.4 
+            ? "汪！花費節奏保持得很舒服喔！今天有好好照顧自己，小柴超級為你高興！🐾" 
+            : "汪！錢包很健康，心情也要放輕鬆！想摸摸我的話隨時點擊我喔！✨";
           if (eyesEl) {
-            // Happy happy curved eyes
+            // Cheerful curved eyes
             eyesEl.innerHTML = `
-              <path d="M70 92 Q76 83 82 92" stroke="#322A24" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-              <path d="M118 92 Q124 83 130 92" stroke="#322A24" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              <path d="M70 92 Q76 83 82 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+              <path d="M118 92 Q124 83 130 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
             `;
           }
           if (blushL) blushL.style.fillOpacity = "0.45";
           if (blushR) blushR.style.fillOpacity = "0.45";
         }
-
-        document.getElementById("hero-remaining").textContent = money(Math.max(0, amountLeft));
       };
 
       // Petting Interaction
@@ -1947,13 +2082,13 @@
         avatarWrapper.appendChild(heart);
         setTimeout(() => heart.remove(), 1000);
 
-        // Update Pet Dialog
+        // Pet quotes
         const petQuotes = [
-          "（呼嚕呼嚕…）主人的摸摸最溫暖了！🥰",
-          "汪！好感度提升！小柴發誓會當你一輩子的忠誠錢包守護員！🐾",
-          "開心到搖尾巴！我們今天也一起省下一杯手搖飲吧！✨",
-          "汪嗚～好舒服！記得今天花錢也要對自己誠實喔！🧡",
-          "主人的手手好溫柔，理財這條路有小柴陪你，絕不孤單！🐕"
+          "（呼嚕呼嚕…）摸摸最舒服了！今天辛苦囉！🥰",
+          "汪！親密度升級！小柴會一直在你身邊陪你度過大學生活！🐾",
+          "開心到搖尾巴！我們今天也一起省下一點小錢錢！✨",
+          "主人的手手好溫暖，有小柴陪你，記帳絕不孤單！🧡",
+          "汪嗚～好舒服！記得今天下課也要對自己好一點喔！🐕"
         ];
         document.getElementById("dog-speech").textContent = petQuotes[Math.floor(Math.random() * petQuotes.length)];
         renderAffinity();
@@ -1963,77 +2098,11 @@
       const renderAffinity = () => {
         const aff = state.affinity || 1;
         let levelName = "親密好夥伴";
-        if (aff >= 100) levelName = "靈魂靈犀至尊柴";
-        else if (aff >= 50) levelName = "形影不離知心柴";
-        else if (aff >= 25) levelName = "默契十足守護犬";
+        if (aff >= 100) levelName = "心靈知己神獸柴";
+        else if (aff >= 50) levelName = "形影不離守護柴";
+        else if (aff >= 25) levelName = "默契十足好夥伴";
 
         document.getElementById("affinity-level").textContent = `Lv.${Math.floor(aff / 10) + 1} ${levelName} (${aff}點)`;
-      };
-
-      // Voice Recognition Engine
-      const initVoice = () => {
-        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-        const voiceBtn = document.getElementById("voice-input");
-        if (!voiceBtn) return;
-
-        if (!SpeechRec) {
-          voiceBtn.title = "目前瀏覽器不支援語音辨識";
-          voiceBtn.addEventListener("click", () => {
-            showToast("ℹ️ 目前瀏覽器未提供語音辨識支援，請直接打字輸入喔！");
-          });
-          return;
-        }
-
-        const recognition = new SpeechRec();
-        recognition.lang = "zh-TW";
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-
-        voiceBtn.addEventListener("click", () => {
-          initAudio();
-          voiceBtn.disabled = true;
-          voiceBtn.innerHTML = "<span>🎧 聆聽中…</span>";
-          try {
-            recognition.start();
-          } catch (e) {
-            voiceBtn.disabled = false;
-            voiceBtn.innerHTML = "<span>🎙️ 說一句</span>";
-          }
-        });
-
-        recognition.onresult = event => {
-          const text = event.results[0][0].transcript;
-          // Extract amount
-          const matchAmt = text.match(/(\d+)\s*(?:元|塊)/) || text.match(/(?:花了|買了)\s*(\d+)/);
-          const amt = matchAmt ? parseInt(matchAmt[1], 10) : null;
-          
-          let name = text.replace(/(?:花了|買了|新台幣|台幣|\$)?\s*\d+\s*(?:元|塊)?/g, "").replace(/(?:記一筆|今天)/g, "").trim();
-          if (!name) name = text;
-
-          if (name) document.getElementById("tx-name").value = name;
-          if (amt) document.getElementById("tx-amount").value = amt;
-
-          // Auto-categorize
-          const catSelect = document.getElementById("tx-category");
-          if (/餐|飯|麵|早餐|午餐|晚餐|便當|飲料|奶茶|咖啡|吃到飽|壽司|麵包/.test(text)) catSelect.value = "餐飲";
-          else if (/車|捷運|公車|計程車|uber|高鐵|油錢|停車|火車/.test(text)) catSelect.value = "交通";
-          else if (/衣服|鞋|包|網購|蝦皮|買了|手錶|飾品/.test(text)) catSelect.value = "購物";
-          else if (/電影|遊戲|ktv|歌|展覽|玩具|娛樂|課金/.test(text)) catSelect.value = "娛樂";
-          else if (/衛生紙|洗髮|沐浴|日用品|超市|洗碗|牙刷/.test(text)) catSelect.value = "日用品";
-          else if (/房租|水費|電費|瓦斯|網路|管理費/.test(text)) catSelect.value = "居住";
-
-          showToast(`🎙️ 聽到「${text}」，已為你填入表單！`);
-          playCoinSound();
-        };
-
-        recognition.onerror = () => {
-          showToast("🎙️ 未能成功辨識，請試著說得更清楚或直接打字。");
-        };
-
-        recognition.onend = () => {
-          voiceBtn.disabled = false;
-          voiceBtn.innerHTML = "<span>🎙️ 說一句</span>";
-        };
       };
 
       // Charts Rendering
@@ -2067,7 +2136,7 @@
         weeklyEl.innerHTML = days.map(d => `
           <div class="bar-column">
             <div class="bar-value">${d.total > 0 ? money(d.total) : "—"}</div>
-            <div class="bar-track" title="${d.key} 花費 ${money(d.total)}">
+            <div class="bar-track" title="${d.key} 開銷 ${money(d.total)}">
               <div class="bar ${d.isToday ? "today" : ""}" style="height:${Math.max(6, (d.total / max) * 100)}%;"></div>
             </div>
             <div class="bar-label">${d.label}</div>
@@ -2087,7 +2156,7 @@
         totalEl.textContent = money(total);
 
         if (total === 0) {
-          chart.style.background = "conic-gradient(#eee8dd 0 100%)";
+          chart.style.background = "conic-gradient(#eee7dd 0 100%)";
           legendEl.innerHTML = `<div class="section-sub">本月還沒有任何花費紀錄喔 🐾</div>`;
           return;
         }
@@ -2130,11 +2199,11 @@
 
         const sorted = [...state.transactions].sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
 
-        // 1. Recent (Top 5 of this month)
+        // 1. Recent (Top 5 this month)
         if (recentEl) {
           const recentList = sorted.filter(tx => thisMonth(tx.date)).slice(0, 5);
           if (recentList.length === 0) {
-            recentEl.innerHTML = `<div style="text-align:center;padding:24px;color:var(--muted);font-size:13.5px;">本月還沒有任何紀錄，點右上角「＋記一筆」吧 🐾</div>`;
+            recentEl.innerHTML = `<div style="text-align:center;padding:24px;color:var(--muted);font-size:13.5px;">本月還沒有開銷，輸入「珍奶 65」或點常用標籤試試吧 🐾</div>`;
           } else {
             recentEl.innerHTML = recentList.map(tx => `
               <div class="transaction">
@@ -2150,8 +2219,8 @@
                 <div class="tx-right">
                   <span class="tx-amount">−${money(tx.amount)}</span>
                   <div class="tx-actions">
-                    <button class="action-icon-btn edit" data-edit-id="${escapeHTML(tx.id)}" title="編輯此筆" aria-label="編輯">✏️</button>
-                    <button class="action-icon-btn delete" data-delete-id="${escapeHTML(tx.id)}" title="刪除此筆" aria-label="刪除">✕</button>
+                    <button class="action-icon-btn edit" data-edit-id="${escapeHTML(tx.id)}" title="編輯修改" aria-label="編輯">✏️</button>
+                    <button class="action-icon-btn delete" data-delete-id="${escapeHTML(tx.id)}" title="刪除記錄" aria-label="刪除">✕</button>
                   </div>
                 </div>
               </div>
@@ -2159,7 +2228,7 @@
           }
         }
 
-        // 2. All Transactions in Transactions Tab
+        // 2. All in Transactions Tab
         if (allEl) {
           const filtered = sorted.filter(tx => {
             const matchQuery = !query || tx.name.toLowerCase().includes(query) || tx.category.toLowerCase().includes(query);
@@ -2168,7 +2237,7 @@
           });
 
           if (filtered.length === 0) {
-            allEl.innerHTML = `<div style="text-align:center;padding:36px;color:var(--muted);">找不到符合條件的明細。</div>`;
+            allEl.innerHTML = `<div style="text-align:center;padding:36px;color:var(--muted);">找不到符合條件的明細紀錄。</div>`;
           } else {
             allEl.innerHTML = filtered.map(tx => `
               <div class="table-row">
@@ -2191,62 +2260,6 @@
         }
       };
 
-      // Budgets View Rendering
-      const renderBudgets = () => {
-        const spent = totalSpent();
-        const totalLimit = Number(state.budget) || 15000;
-        const ratio = totalLimit ? spent / totalLimit : 0;
-        const diff = totalLimit - spent;
-
-        document.getElementById("budget-total-spent").textContent = money(spent);
-        document.getElementById("budget-total-limit").textContent = money(totalLimit);
-
-        const progressFill = document.getElementById("budget-total-progress");
-        progressFill.style.width = `${Math.min(100, ratio * 100)}%`;
-        progressFill.style.background = ratio >= 1 ? "var(--red)" : ratio >= 0.8 ? "var(--yellow)" : "var(--sage)";
-
-        const remainingEl = document.getElementById("budget-total-remaining");
-        if (diff < 0) {
-          remainingEl.innerHTML = `<span class="danger">⚠️ 已超出預算 ${money(-diff)}！小柴建議暫緩購買非必需品。</span>`;
-        } else {
-          remainingEl.innerHTML = `<span class="positive">✓ 還有 ${money(diff)} 可以安心彈性運用 (${Math.round((1 - ratio) * 100)}% 額度在握)</span>`;
-        }
-
-        // Category Budgets Grid
-        const grid = document.getElementById("budget-categories");
-        if (!grid) return;
-
-        const totals = categoryTotals();
-        grid.innerHTML = categories.map(c => {
-          const catSpent = totals[c.name] || 0;
-          const catLimit = Number(state.limits[c.name]) || 0;
-          const catRatio = catLimit ? catSpent / catLimit : 0;
-          const isOver = catSpent > catLimit;
-
-          return `
-            <article class="panel budget-card">
-              <div class="budget-card-head">
-                <span class="tx-icon" style="background:${c.color}20">${c.icon}</span>
-                <div>
-                  <strong>${c.name}</strong>
-                  <span>本月支出上限 ${money(catLimit)}</span>
-                </div>
-              </div>
-              <div class="budget-figures">
-                <div class="budget-spent">${money(catSpent)}</div>
-                <div class="budget-limit">/ ${money(catLimit)}</div>
-              </div>
-              <div class="progress-track">
-                <div class="progress-fill" style="width:${Math.min(100, catRatio * 100)}%;background:${catRatio >= 1 ? 'var(--red)' : catRatio >= 0.8 ? 'var(--yellow)' : c.color};"></div>
-              </div>
-              <div class="budget-remaining ${isOver ? 'danger' : ''}">
-                ${isOver ? `超出上限 ${money(catSpent - catLimit)}` : `還可使用 ${money(catLimit - catSpent)}`}
-              </div>
-            </article>
-          `;
-        }).join("");
-      };
-
       // Reports View Needs vs Wants
       const renderReports = () => {
         renderDonutChart("report-donut", "report-donut-total", "report-legend");
@@ -2263,7 +2276,7 @@
         needsWantsEl.innerHTML = `
           <div style="margin-bottom:16px;">
             <div class="legend-row">
-              <span class="legend-label"><span class="legend-dot" style="background:var(--sage)"></span>日常必需（居住、交通、生活用品）</span>
+              <span class="legend-label"><span class="legend-dot" style="background:var(--sage)"></span>日常必需（房租、交通、生活用品）</span>
               <strong>${money(needSum)} (${needPct}%)</strong>
             </div>
             <div class="progress-track" style="margin-top:6px;height:9px;">
@@ -2272,7 +2285,7 @@
           </div>
           <div>
             <div class="legend-row">
-              <span class="legend-label"><span class="legend-dot" style="background:var(--orange)"></span>生活享受（餐飲小確幸、娛樂購物等）</span>
+              <span class="legend-label"><span class="legend-dot" style="background:var(--orange)"></span>生活小確幸（美食聚餐、娛樂購物）</span>
               <strong>${money(wantSum)} (${100 - needPct}%)</strong>
             </div>
             <div class="progress-track" style="margin-top:6px;height:9px;">
@@ -2282,119 +2295,219 @@
         `;
       };
 
-      // Settings Inputs
-      const renderSettings = () => {
-        const budgetInput = document.getElementById("setting-total-budget");
-        if (budgetInput) budgetInput.value = state.budget;
-
-        const catSettingsEl = document.getElementById("category-settings");
-        if (catSettingsEl) {
-          catSettingsEl.innerHTML = categories.map(c => `
-            <div class="setting-row">
-              <div>
-                <strong>${c.icon} ${c.name} 分類預算</strong>
-                <span>每月上限設定</span>
-              </div>
-              <input class="setting-input" type="number" min="0" step="100" data-cat-limit="${c.name}" value="${Number(state.limits[c.name]) || 0}">
-            </div>
-          `).join("");
-        }
-      };
-
       // Main Render Coordinator
       const render = () => {
         const spent = totalSpent();
-        const left = state.budget - spent;
-        const ratio = state.budget ? spent / state.budget : 0;
+        const budget = Number(state.budget) || 10000;
+        const left = budget - spent;
+        const ratio = budget ? spent / budget : 0;
 
         // Topbar
         const hr = today.getHours();
         document.getElementById("greeting").textContent = hr < 11 ? "早安，今天也辛苦了 ☀️" : hr < 18 ? "午後好，適時喝杯水休息一下 🌤️" : "晚安，今天也辛苦了 🌙";
         document.getElementById("today-date").textContent = new Intl.DateTimeFormat("zh-TW", { year: "numeric", month: "long", day: "numeric", weekday: "short" }).format(today);
-        document.getElementById("month-label").textContent = `${today.getFullYear()} 年 ${today.getMonth() + 1} 月`;
 
-        // Stats Cards
-        document.getElementById("stat-spent").textContent = money(spent);
-        document.getElementById("stat-spent-note").textContent = `本月累積記下 ${monthTransactions().length} 筆`;
-
-        const statLeftEl = document.getElementById("stat-left");
-        const statLeftNote = document.getElementById("stat-left-note");
-        statLeftEl.textContent = money(Math.max(0, left));
-        if (left < 0) {
-          statLeftNote.innerHTML = `<span class="danger">已超出額度 ${money(-left)}</span>`;
-        } else {
-          statLeftNote.innerHTML = `<span class="positive">${Math.round((1 - ratio) * 100)}%</span> 預算尚在安全範圍`;
-        }
-
-        // Daily safe allowance
+        // Days remaining in this month
         const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
         const remainingDays = Math.max(1, daysInMonth - today.getDate() + 1);
-        const dailyAllowance = Math.max(0, Math.round(left / remainingDays));
-        document.getElementById("stat-forecast").textContent = money(dailyAllowance);
-        document.getElementById("stat-forecast-note").textContent = `本月還剩 ${remainingDays} 天，每天可花 ${money(dailyAllowance)}`;
 
-        // Mini sidebar
+        // Daily Safe Allowance
+        const dailySafe = Math.round(Math.max(0, left) / remainingDays);
+        document.getElementById("daily-allowance-val").textContent = money(dailySafe);
+        document.getElementById("days-countdown-tag").textContent = `本月還剩 ${remainingDays} 天`;
+        
+        const dailyNoteEl = document.getElementById("daily-allowance-note");
+        if (left >= 0) {
+          dailyNoteEl.textContent = `距離月底還有 ${remainingDays} 天，每天還能安心自由花 ${money(dailySafe)}，無痛掌控生活節奏。`;
+        } else {
+          dailyNoteEl.innerHTML = `已稍微超出預算 ${money(-left)}。沒關係，點下方「＋500 放寬一點」微調，或是放慢步調慢慢平衡就好汪！`;
+        }
+
+        // Monthly Flexible Living Budget
+        document.getElementById("monthly-budget-val").textContent = money(budget);
+        document.getElementById("monthly-spent-ratio").textContent = `（已支用 ${Math.round(ratio * 100)}%）`;
+        document.getElementById("dashboard-spent-val").textContent = money(spent);
+
+        const progressFill = document.getElementById("dashboard-progress-fill");
+        progressFill.style.width = `${Math.min(100, ratio * 100)}%`;
+        progressFill.style.background = ratio > 1 ? "#e88b52" : ratio > 0.8 ? "var(--yellow)" : "var(--sage)";
+
+        const statusLabel = document.getElementById("dashboard-status-label");
+        if (left < 0) {
+          statusLabel.innerHTML = `稍微超出目標 ${money(-left)}（可隨時微調）`;
+        } else {
+          statusLabel.innerHTML = `還剩 ${money(left)} 可支配`;
+        }
+
+        // Sidebar Mini Widget
         document.getElementById("mini-remaining").textContent = money(Math.max(0, left));
-        document.getElementById("mini-pct").textContent = `${Math.min(100, Math.round(ratio * 100))}%`;
+        document.getElementById("mini-pct").textContent = `${Math.round(ratio * 100)}%`;
         document.getElementById("mini-fill").style.width = `${Math.min(100, ratio * 100)}%`;
-        document.getElementById("mini-fill").style.background = ratio >= 1 ? "var(--red)" : ratio >= 0.8 ? "var(--yellow)" : "var(--orange-gradient)";
-        document.getElementById("mini-note").textContent = `已支用 ${Math.round(ratio * 100)}% · 總額度 ${money(state.budget)}`;
+        document.getElementById("mini-fill").style.background = ratio > 1 ? "var(--orange)" : "var(--orange-gradient)";
+        document.getElementById("mini-note").textContent = `目標生活費 ${money(budget)} · 剩 ${remainingDays} 天`;
 
-        // Tips Generator
+        // Allowance View input sync
+        const view3Input = document.getElementById("allowance-input-field");
+        if (view3Input) view3Input.value = budget;
+
+        // Shiba tips
         const totals = categoryTotals();
         const topCat = categories.reduce((max, c) => totals[c.name] > totals[max.name] ? c : max, categories[0]);
-        const drinkTxs = monthTransactions().filter(tx => /奶茶|拿鐵|手搖|飲料|咖啡/.test(tx.name));
-        let tip = "記下一筆支出，小柴就能幫你找到適合自己的省錢小方法。";
-        if (drinkTxs.length >= 3) {
-          tip = `這個月已經記了 ${drinkTxs.length} 筆手搖或咖啡花費（共 ${money(drinkTxs.reduce((s,t)=>s+Number(t.amount),0))}）。下週試著少喝一杯，月底就能多吃一頓大餐喔！🐾`;
-        } else if (totals[topCat.name] > 0) {
-          tip = `目前「${topCat.name}」是本月支出最高的分類（${money(totals[topCat.name])}）。檢查一下是否有非必要購物，小柴為你的自律喝采！`;
+        let tip = "生活本就起起伏伏，按自己的舒服節奏過日子就好汪！每一筆記錄都是在溫柔照顧自己。";
+        if (totals[topCat.name] > 0) {
+          tip = `本月開銷目前最多的是「${topCat.name}」（${money(totals[topCat.name])}）。有誠實記下來就很棒，阿柴為你的自律鼓掌！🐾`;
         }
         document.getElementById("saving-tip").textContent = tip;
         document.getElementById("report-tip").textContent = tip;
 
-        updateDogMood(left, ratio);
+        updateDogMood(spent, budget);
+        renderQuickCapsules();
         renderWeeklyChart();
         renderDonutChart("donut", "donut-total", "category-legend");
         renderTransactions();
-        renderBudgets();
         renderReports();
-        renderSettings();
         renderAffinity();
       };
 
-      // Modal Handling (Add / Edit)
-      const modal = document.getElementById("transaction-modal");
-      const form = document.getElementById("transaction-form");
-      const modalTitle = document.getElementById("modal-title");
-      const editIdInput = document.getElementById("tx-edit-id");
+      // Lazy Quick Form Submit (一句話懶人快記)
+      const lazyForm = document.getElementById("lazy-quick-form");
+      const lazyInput = document.getElementById("lazy-quick-input");
 
-      const openModal = (txToEdit = null) => {
-        initAudio();
-        if (txToEdit) {
-          modalTitle.textContent = "修改記帳紀錄";
-          editIdInput.value = txToEdit.id;
-          document.getElementById("tx-name").value = txToEdit.name;
-          document.getElementById("tx-amount").value = txToEdit.amount;
-          document.getElementById("tx-category").value = txToEdit.category;
-          document.getElementById("tx-date").value = txToEdit.date;
-          document.getElementById("modal-submit-btn").innerHTML = "<span>確認修改 ✦</span>";
-        } else {
-          modalTitle.textContent = "記下一筆花費";
-          editIdInput.value = "";
-          form.reset();
-          document.getElementById("tx-date").value = dateISO(today);
-          document.getElementById("modal-submit-btn").innerHTML = "<span>收進帳本 ✦</span>";
+      lazyForm.addEventListener("submit", e => {
+        e.preventDefault();
+        const parsed = parseQuickText(lazyInput.value);
+        if (!parsed) {
+          showToast("⚠️ 請輸入內容，例如「珍奶 65」或直接打數字「120」");
+          return;
         }
-        modal.classList.add("open");
-        document.getElementById("tx-name").focus();
+
+        addTransactionDirect(parsed.name, parsed.amount, parsed.category);
+        lazyInput.value = "";
+      });
+
+      // Quick Adjust Buttons Handlers
+      const adjustBudget = delta => {
+        state.budget = Math.max(500, (Number(state.budget) || 10000) + delta);
+        if (save()) {
+          playCoinSound();
+          render();
+          const sign = delta > 0 ? "放寬" : "下修";
+          showToast(`🐾 已為你${sign} $${Math.abs(delta)} 生活費！享受當下、好好生活 ✨`);
+        }
       };
 
-      const closeModal = () => {
-        modal.classList.remove("open");
-        form.reset();
-        editIdInput.value = "";
+      document.getElementById("btn-adjust-plus500").addEventListener("click", () => adjustBudget(500));
+      document.getElementById("btn-adjust-minus500").addEventListener("click", () => adjustBudget(-500));
+      document.getElementById("btn-adjust-plus1000").addEventListener("click", () => adjustBudget(1000));
+
+      document.getElementById("view3-adjust-plus500").addEventListener("click", () => adjustBudget(500));
+      document.getElementById("view3-adjust-minus500").addEventListener("click", () => adjustBudget(-500));
+      document.getElementById("view3-adjust-plus1000").addEventListener("click", () => adjustBudget(1000));
+      document.getElementById("view3-adjust-reset").addEventListener("click", () => {
+        state.budget = 10000;
+        save();
+        render();
+        showToast("🐾 生活費目標已設為 10,000 元標竿！");
+      });
+
+      document.getElementById("save-allowance-btn").addEventListener("click", () => {
+        const val = Number(document.getElementById("allowance-input-field").value);
+        if (val > 0) {
+          state.budget = val;
+          save();
+          render();
+          showToast(`💾 生活費目標已更新為 ${money(val)}！`);
+        }
+      });
+
+      document.getElementById("edit-budget-direct-btn").addEventListener("click", () => {
+        const current = Number(state.budget) || 10000;
+        const input = prompt("請輸入本月預計的生活費總額度 (NT$)：", current);
+        if (input !== null) {
+          const val = parseInt(input, 10);
+          if (val > 0) {
+            state.budget = val;
+            save();
+            render();
+            showToast(`💾 本月生活費已調整為 ${money(val)}！`);
+          }
+        }
+      });
+
+      // Voice Input Setup
+      const initVoice = () => {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const voiceBtn = document.getElementById("voice-input");
+        if (!voiceBtn) return;
+
+        if (!SpeechRec) {
+          voiceBtn.title = "目前瀏覽器不支援語音辨識";
+          voiceBtn.addEventListener("click", () => {
+            showToast("ℹ️ 目前瀏覽器未提供語音支援，請直接打字輸入喔！");
+          });
+          return;
+        }
+
+        const recognition = new SpeechRec();
+        recognition.lang = "zh-TW";
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        voiceBtn.addEventListener("click", () => {
+          initAudio();
+          voiceBtn.disabled = true;
+          voiceBtn.innerHTML = "<span>🎧 聆聽中…</span>";
+          try {
+            recognition.start();
+          } catch (e) {
+            voiceBtn.disabled = false;
+            voiceBtn.innerHTML = "<span>🎙️ 說一句</span>";
+          }
+        });
+
+        recognition.onresult = event => {
+          const text = event.results[0][0].transcript;
+          lazyInput.value = text;
+          const parsed = parseQuickText(text);
+          if (parsed) {
+            addTransactionDirect(parsed.name, parsed.amount, parsed.category);
+            lazyInput.value = "";
+          } else {
+            showToast(`🎙️ 聽到「${text}」，已為你填入快記框！`);
+          }
+        };
+
+        recognition.onerror = () => {
+          showToast("🎙️ 未能成功辨識，請試著說得更清楚或直接打字。");
+        };
+
+        recognition.onend = () => {
+          voiceBtn.disabled = false;
+          voiceBtn.innerHTML = "<span>🎙️ 說一句</span>";
+        };
       };
+
+      // Ask Shiba Emotional Dialogue
+      document.querySelectorAll("[data-ask]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const type = btn.dataset.ask;
+          const speechEl = document.getElementById("dog-speech");
+          const left = state.budget - totalSpent();
+
+          playBarkSound();
+          if (type === "boba") {
+            speechEl.textContent = left > 2000 
+              ? "汪！點杯微糖少冰犒賞自己一下很可以！喝完心情好，讀書工作都更有動力汪！🧋" 
+              : "錢包有點吃緊囉！小柴泡溫開水給你喝，少買這杯，月底就能多吃一顆溫泉蛋！🐾";
+          } else if (type === "reward") {
+            speechEl.textContent = "想犒賞自己？先把商品加進購物車，等明早起床如果還是很心動，再把它買回家！冷靜期能幫你省下一半衝動消費！🎁";
+          } else if (type === "anxious") {
+            speechEl.textContent = "別慌別慌，有小柴在！我們一起看「每日安心花額度」，只要接下來幾天自己煮個簡單麵條，就能平安過好這個月！✨";
+          } else if (type === "worth") {
+            speechEl.textContent = "問自己三個問題：我需要它嗎？我一年內會用五次以上嗎？沒買我明天會難過嗎？如果都是否，那就先省下來吧！🐕";
+          }
+        });
+      });
 
       // View Switching System
       const navButtons = document.querySelectorAll("[data-view]");
@@ -2418,52 +2531,41 @@
         btn.addEventListener("click", () => switchView(btn.dataset.goto));
       });
 
-      // Quick Chips Listener
-      document.querySelectorAll("[data-quick]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const [name, amt, cat] = btn.dataset.quick.split(",");
-          state.transactions.push({
-            id: `tx-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-            name,
-            amount: Number(amt),
-            category: cat,
-            date: dateISO(today)
-          });
-          if (save()) {
-            playCoinSound();
-            render();
-            showToast(`🐾 快速記帳成功：「${name}」$${amt} 已收好！`);
-          }
-        });
-      });
+      // Detailed Modal Handling (For Edit and Custom Add)
+      const modal = document.getElementById("transaction-modal");
+      const form = document.getElementById("transaction-form");
+      const modalTitle = document.getElementById("modal-title");
+      const editIdInput = document.getElementById("tx-edit-id");
 
-      // Ask Shiba Pill Buttons (Emotional spending advice)
-      document.querySelectorAll("[data-ask]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const type = btn.dataset.ask;
-          const speechEl = document.getElementById("dog-speech");
-          const left = state.budget - totalSpent();
+      const openModal = (txToEdit = null) => {
+        initAudio();
+        if (txToEdit) {
+          modalTitle.textContent = "修改記帳紀錄";
+          editIdInput.value = txToEdit.id;
+          document.getElementById("tx-name").value = txToEdit.name;
+          document.getElementById("tx-amount").value = txToEdit.amount;
+          document.getElementById("tx-category").value = txToEdit.category;
+          document.getElementById("tx-date").value = txToEdit.date;
+          document.getElementById("modal-submit-btn").innerHTML = "<span>確認修改 ✦</span>";
+        } else {
+          modalTitle.textContent = "詳細記下一筆";
+          editIdInput.value = "";
+          form.reset();
+          document.getElementById("tx-date").value = dateISO(today);
+          document.getElementById("modal-submit-btn").innerHTML = "<span>收進帳本 ✦</span>";
+        }
+        modal.classList.add("open");
+        document.getElementById("tx-name").focus();
+      };
 
-          playBarkSound();
-          if (type === "boba") {
-            speechEl.textContent = left > 5000 
-              ? "汪！預算還很充足，點杯微糖少冰犒賞自己一下很可以！但這週要注意不要連續喝三天喔～🧋" 
-              : "錢包有點吃緊囉！小柴泡溫開水給你喝，少買這杯，明天就能多吃一顆溫泉蛋！🐾";
-          } else if (type === "reward") {
-            speechEl.textContent = "想犒賞自己？先把商品加進購物車，等明早起床如果還是很心動，再把它買回家！冷靜期能幫你省下一半衝動消費！🎁";
-          } else if (type === "anxious") {
-            speechEl.textContent = "別慌別慌，有小柴在！我們一起看「本日建議花費」，只要接下來幾天自己煮個簡單麵條，就能平安撐到發薪日！✨";
-          } else if (type === "worth") {
-            speechEl.textContent = "問自己三個問題：我需要它嗎？我一年內會用五次以上嗎？沒買我明天會難過嗎？如果都是否，那就先省下來吧！🐕";
-          }
-        });
-      });
+      const closeModal = () => {
+        modal.classList.remove("open");
+        form.reset();
+        editIdInput.value = "";
+      };
 
-      // Event Listeners
-      document.querySelectorAll("[data-add-btn]").forEach(btn => {
-        btn.addEventListener("click", () => openModal());
-      });
-
+      document.getElementById("quick-custom-btn")?.addEventListener("click", () => openModal());
+      document.getElementById("open-add-modal-btn")?.addEventListener("click", () => openModal());
       document.getElementById("close-modal").addEventListener("click", closeModal);
       document.getElementById("cancel-modal").addEventListener("click", closeModal);
       modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
@@ -2474,7 +2576,6 @@
         }
       });
 
-      // Form Submit (Create or Update)
       form.addEventListener("submit", e => {
         e.preventDefault();
         const fd = new FormData(form);
@@ -2490,14 +2591,12 @@
         }
 
         if (editId) {
-          // Update existing
           const idx = state.transactions.findIndex(t => t.id === editId);
           if (idx !== -1) {
             state.transactions[idx] = { id: editId, name, amount, category, date };
             showToast("✏️ 紀錄已成功更新！");
           }
         } else {
-          // Add new
           state.transactions.push({
             id: `tx-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
             name,
@@ -2515,7 +2614,7 @@
         }
       });
 
-      // Transaction Action Delegation (Edit / Delete)
+      // Transaction Actions (Edit / Delete)
       const handleTxActions = e => {
         const editBtn = e.target.closest("[data-edit-id]");
         if (editBtn) {
@@ -2547,60 +2646,30 @@
       document.getElementById("search-transactions")?.addEventListener("input", renderTransactions);
       document.getElementById("filter-category")?.addEventListener("change", renderTransactions);
 
-      // Settings Save
-      document.getElementById("save-settings").addEventListener("click", () => {
-        const newBudget = Number(document.getElementById("setting-total-budget").value);
-        if (newBudget <= 0) {
-          showToast("⚠️ 總預算金額必須大於 0");
-          return;
-        }
-        state.budget = newBudget;
-
-        document.querySelectorAll("[data-cat-limit]").forEach(inp => {
-          const val = Number(inp.value);
-          if (val >= 0) state.limits[inp.dataset.catLimit] = val;
-        });
-
-        if (save()) {
-          playCoinSound();
-          render();
-          showToast("💾 預算設定已儲存完成！");
-        }
-      });
-
-      // Data Reset
-      document.getElementById("reset-data").addEventListener("click", () => {
-        if (confirm("⚠️ 警告：確定清除本機所有記帳與預算資料嗎？此操作無法撤銷！")) {
-          localStorage.removeItem(STORAGE_KEY);
-          state = seed();
-          save();
-          render();
-          showToast("🔄 帳本已重設為全新起始狀態");
-        }
-      });
+      // Pet Button
+      document.getElementById("shiba-avatar-btn").addEventListener("click", petShiba);
+      document.getElementById("sidebar-affinity-btn").addEventListener("click", petShiba);
 
       // Sound Toggle
-      document.getElementById("sound-toggle-btn").addEventListener("click", () => {
+      const toggleSound = () => {
         soundEnabled = !soundEnabled;
         state.sound = soundEnabled;
         save();
         document.getElementById("sound-status-icon").textContent = soundEnabled ? "🔊 開啟" : "🔇 靜音";
         showToast(soundEnabled ? "🔊 音效已開啟" : "🔇 已切換為靜音模式");
         if (soundEnabled) playCoinSound();
-      });
+      };
+      document.getElementById("sound-toggle-btn").addEventListener("click", toggleSound);
+      document.getElementById("sound-toggle-btn2")?.addEventListener("click", toggleSound);
 
-      // Pet Button
-      document.getElementById("shiba-avatar-btn").addEventListener("click", petShiba);
-      document.getElementById("sidebar-affinity-btn").addEventListener("click", petShiba);
-
-      // Export CSV Functionality (Excel-friendly with UTF-8 BOM)
+      // Export CSV (Excel compatible with UTF-8 BOM)
       const exportCSV = () => {
         if (!state.transactions.length) {
           showToast("⚠️ 目前沒有任何紀錄可匯出喔");
           return;
         }
 
-        const headers = ["交易編號", "品項名稱", "消費金額", "分類", "消費日期"];
+        const headers = ["交易編號", "品項名稱", "消費金額", "生活類別", "日期"];
         const rows = state.transactions.map(t => [
           `"${t.id}"`,
           `"${t.name.replace(/"/g, '""')}"`,
@@ -2614,7 +2683,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `柴柴記帳本_匯出備份_${dateISO(today)}.csv`;
+        a.download = `柴柴生活記帳_匯出_${dateISO(today)}.csv`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -2632,7 +2701,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `shiba_ledger_backup_${dateISO(today)}.json`;
+        a.download = `shiba_lifestyle_ledger_${dateISO(today)}.json`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -2656,7 +2725,7 @@
               state = { ...seed(), ...data };
               save();
               render();
-              showToast(`🎉 成功還原 ${data.transactions.length} 筆記帳資料！`);
+              showToast(`🎉 成功還原 ${data.transactions.length} 筆生活開銷！`);
             }
           } catch (err) {
             alert("匯入失敗：檔案損壞或格式不符合。");
@@ -2665,7 +2734,18 @@
         reader.readAsText(file);
       });
 
-      // Initialize
+      // Reset Data
+      document.getElementById("reset-data")?.addEventListener("click", () => {
+        if (confirm("⚠️ 警告：確定清除本機所有記帳與生活費資料嗎？此操作無法撤銷！")) {
+          localStorage.removeItem(STORAGE_KEY);
+          state = seed();
+          save();
+          render();
+          showToast("🔄 帳本已重設為全新起始狀態");
+        }
+      });
+
+      // Init
       initVoice();
       render();
     })();
