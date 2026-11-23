@@ -205,6 +205,37 @@
         return { name, amount, category, date: dateISO(today) };
       };
 
+      // Smart Emoji selector based on item name keyword
+      const smartEmoji = (name, category) => {
+        const n = name.toLowerCase();
+        if (/咖啡|latte|拿鐵|美式|cappuccino/.test(n)) return "☕";
+        if (/奶茶|珍奶|手搖|飲料|波霸|冬瓜|百香|芋頭|草莓|檸檬茶|冬奶/.test(n)) return "🧋";
+        if (/早餐|吐司|蛋餅|饅頭|豆漿|稀飯|燒餅|包子/.test(n)) return "🍳";
+        if (/便當|午餐|晚餐|飯|滷肉|雞腿|排骨|池上|自助餐/.test(n)) return "🍱";
+        if (/麵|拉麵|烏龍|義大利麵|炒麵|湯麵|冬粉/.test(n)) return "🍜";
+        if (/披薩|漢堡|薯條|麥當勞|肯德基|subway|轟炸|雞塊/.test(n)) return "🍔";
+        if (/壽司|日式|生魚片|丼飯/.test(n)) return "🍣";
+        if (/火鍋|涮涮鍋|麻辣鍋/.test(n)) return "🍲";
+        if (/蛋糕|甜點|麵包|可頌|貝果/.test(n)) return "🥐";
+        if (/捷運|公車|MRT|地鐵|悠遊|通勤/.test(n)) return "🚇";
+        if (/高鐵|火車|台鐵|客運/.test(n)) return "🚆";
+        if (/計程車|UBER|油錢|停車|加油/.test(n)) return "🚕";
+        if (/購物|網購|蝦皮|衣服|鞋子|包包/.test(n)) return "🛍️";
+        if (/電影|KTV|遊戲|展覽|音樂|演唱/.test(n)) return "🎬";
+        if (/超商|7-11|全家|萊爾富|ok/.test(n)) return "🏪";
+        if (/超市|大潤發|家樂福|全聯|頂好/.test(n)) return "🛒";
+        if (/藥妝|屈臣氏|寶雅|洗髮|洗面乳/.test(n)) return "🧴";
+        if (/書|文具|筆記/.test(n)) return "📚";
+        if (/水費|電費|房租|宿舍|網路|瓦斯/.test(n)) return "🏠";
+        if (category === "交通") return "🚇";
+        if (category === "購物") return "🛍️";
+        if (category === "娛樂") return "🎧";
+        if (category === "日用品") return "🧴";
+        if (category === "居住") return "🏠";
+        if (category === "餐飲") return "🍴";
+        return "✨";
+      };
+
       // Top 5 Frequent Items Calculation
       const getFrequentItems = () => {
         const counts = {};
@@ -222,11 +253,10 @@
 
         const defaults = [
           { name: "早餐", amount: 65, category: "餐飲" },
-          { name: "午餐便當", amount: 120, category: "餐飲" },
-          { name: "珍珠奶茶", amount: 60, category: "餐飲" },
-          { name: "大杯拿鐵", amount: 85, category: "餐飲" },
-          { name: "捷運通勤", amount: 30, category: "交通" },
-          { name: "超商採買", amount: 100, category: "日用品" }
+          { name: "午餐", amount: 110, category: "餐飲" },
+          { name: "手搖飲", amount: 55, category: "餐飲" },
+          { name: "咖啡", amount: 85, category: "餐飲" },
+          { name: "捷運", amount: 30, category: "交通" }
         ];
 
         const combined = [...sorted];
@@ -246,7 +276,7 @@
         const items = getFrequentItems();
         container.innerHTML = items.map(item => `
           <button class="capsule-item" data-instant="${escapeHTML(item.name)},${item.amount},${escapeHTML(item.category)}" title="點擊直接入帳">
-            <span>${icons[item.category] || "✨"}</span>
+            <span>${smartEmoji(item.name, item.category)}</span>
             <span>${escapeHTML(item.name)}</span>
             <strong style="color:var(--orange-dark);">$${item.amount}</strong>
           </button>
@@ -290,46 +320,49 @@
         const diff = budget - spent;
         const ratio = budget ? spent / budget : 0;
 
+        // Q版大眼常數
+        const happyEyes = `
+          <ellipse cx="88" cy="98" rx="10" ry="11" fill="#3A2B22"/>
+          <ellipse cx="132" cy="98" rx="10" ry="11" fill="#3A2B22"/>
+          <circle cx="84" cy="93" r="3.5" fill="#FFFFFF"/>
+          <circle cx="128" cy="93" r="3.5" fill="#FFFFFF"/>
+          <circle cx="93" cy="101" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <circle cx="137" cy="101" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <path d="M82 97 Q88 89 94 97" stroke="#3A2B22" stroke-width="2" stroke-linecap="round" fill="#3A2B22"/>
+          <path d="M126 97 Q132 89 138 97" stroke="#3A2B22" stroke-width="2" stroke-linecap="round" fill="#3A2B22"/>`;
+        const alertEyes = `
+          <ellipse cx="88" cy="98" rx="11" ry="12" fill="#2C2420"/>
+          <ellipse cx="132" cy="98" rx="11" ry="12" fill="#2C2420"/>
+          <circle cx="84" cy="92" r="3.8" fill="#FFFFFF"/>
+          <circle cx="128" cy="92" r="3.8" fill="#FFFFFF"/>
+          <circle cx="93" cy="101" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+          <circle cx="137" cy="101" r="1.5" fill="#FFFFFF" opacity="0.5"/>`;
+        const gentleEyes = `
+          <path d="M78 97 Q88 86 98 97" stroke="#2C2420" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M122 97 Q132 86 142 97" stroke="#2C2420" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <circle cx="84" cy="100" r="2" fill="#2C2420" opacity="0.5"/>
+          <circle cx="128" cy="100" r="2" fill="#2C2420" opacity="0.5"/>`;
+
         if (spent > budget) {
           // Beyond target: Non-judgmental, warm comfort!
           speechEl.textContent = "這個月比較辛苦或聚餐比較多沒關係，我們下個月再一起調整就好汪！錢錢只是變成了生活的美好回憶，不用自責喔！🐾";
-          if (eyesEl) {
-            // Gentle caring smiling eyes
-            eyesEl.innerHTML = `
-              <path d="M70 94 Q76 86 82 94" stroke="#362C25" stroke-width="3" stroke-linecap="round" fill="none"/>
-              <path d="M118 94 Q124 86 130 94" stroke="#362C25" stroke-width="3" stroke-linecap="round" fill="none"/>
-            `;
-          }
-          if (blushL) blushL.style.fillOpacity = "0.2";
-          if (blushR) blushR.style.fillOpacity = "0.2";
+          if (eyesEl) eyesEl.innerHTML = gentleEyes;
+          if (blushL) blushL.style.fillOpacity = "0.18";
+          if (blushR) blushR.style.fillOpacity = "0.18";
         } else if (ratio >= 0.8) {
           // Approaching target: Friendly nudge
           speechEl.textContent = `汪！距離月底還有 ${remainingDays} 天，生活費已使用 ${Math.round(ratio * 100)}%。今天一起散步喝杯溫水，省下一杯手搖好不好汪？☀️`;
-          if (eyesEl) {
-            // Open, attentive eyes
-            eyesEl.innerHTML = `
-              <ellipse cx="76" cy="92" rx="7" ry="8" fill="#362C25"/>
-              <circle cx="74" cy="88" r="2.5" fill="#FFFFFF"/>
-              <ellipse cx="124" cy="92" rx="7" ry="8" fill="#362C25"/>
-              <circle cx="122" cy="88" r="2.5" fill="#FFFFFF"/>
-            `;
-          }
-          if (blushL) blushL.style.fillOpacity = "0.35";
-          if (blushR) blushR.style.fillOpacity = "0.35";
+          if (eyesEl) eyesEl.innerHTML = alertEyes;
+          if (blushL) blushL.style.fillOpacity = "0.32";
+          if (blushR) blushR.style.fillOpacity = "0.32";
         } else {
           // Healthy pace: Happy!
           speechEl.textContent = ratio > 0.4 
             ? "汪！花費節奏保持得很舒服喔！今天有好好照顧自己，小柴超級為你高興！🐾" 
             : "汪！錢包很健康，心情也要放輕鬆！想摸摸我的話隨時點擊我喔！✨";
-          if (eyesEl) {
-            // Cheerful curved eyes
-            eyesEl.innerHTML = `
-              <path d="M70 92 Q76 83 82 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-              <path d="M118 92 Q124 83 130 92" stroke="#362C25" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-            `;
-          }
-          if (blushL) blushL.style.fillOpacity = "0.45";
-          if (blushR) blushR.style.fillOpacity = "0.45";
+          if (eyesEl) eyesEl.innerHTML = happyEyes;
+          if (blushL) blushL.style.fillOpacity = "0.42";
+          if (blushR) blushR.style.fillOpacity = "0.42";
         }
       };
 
@@ -476,7 +509,7 @@
               <div class="transaction">
                 <div class="tx-left">
                   <div class="tx-icon" style="background:${(categories.find(c => c.name === tx.category)?.color || '#e88b52')}18">
-                    ${icons[tx.category] || "✨"}
+                    ${smartEmoji(tx.name, tx.category)}
                   </div>
                   <div class="tx-info">
                     <span class="tx-name">${escapeHTML(tx.name)}</span>
@@ -510,7 +543,7 @@
               <div class="table-row">
                 <div class="table-desc">
                   <span class="tx-icon" style="background:${(categories.find(c => c.name === tx.category)?.color || '#e88b52')}18">
-                    ${icons[tx.category] || "✨"}
+                    ${smartEmoji(tx.name, tx.category)}
                   </span>
                   <span>${escapeHTML(tx.name)}</span>
                 </div>
@@ -607,7 +640,7 @@
         }
 
         // Sidebar Mini Widget
-        document.getElementById("mini-remaining").textContent = money(Math.max(0, left));
+        document.getElementById("mini-remaining").textContent = left >= 0 ? `本月還可花：${money(left)}` : `超出目標 ${money(-left)}`;
         document.getElementById("mini-pct").textContent = `${Math.round(ratio * 100)}%`;
         document.getElementById("mini-fill").style.width = `${Math.min(100, ratio * 100)}%`;
         document.getElementById("mini-fill").style.background = ratio > 1 ? "var(--orange)" : "var(--orange-gradient)";
@@ -708,10 +741,11 @@
         if (!voiceBtn) return;
 
         if (!SpeechRec) {
-          voiceBtn.title = "目前瀏覽器不支援語音辨識";
+          // Browser doesn't support speech recognition at all
           voiceBtn.addEventListener("click", () => {
-            showToast("ℹ️ 目前瀏覽器未提供語音支援，請直接打字輸入喔！");
+            showToast("🐾 目前環境不支援語音，直接打字或點快捷鍵也很快汪！");
           });
+          voiceBtn.title = "目前瀏覽器不支援語音辨識";
           return;
         }
 
@@ -729,6 +763,7 @@
           } catch (e) {
             voiceBtn.disabled = false;
             voiceBtn.innerHTML = "<span>🎙️ 說一句</span>";
+            showToast("🐾 無法啟動語音，直接打字或點快捷鍵也很快汪！");
           }
         });
 
@@ -744,8 +779,14 @@
           }
         };
 
-        recognition.onerror = () => {
-          showToast("🎙️ 未能成功辨識，請試著說得更清楚或直接打字。");
+        recognition.onerror = (event) => {
+          if (event.error === "not-allowed" || event.error === "permission-denied") {
+            showToast("🎙️ 麥克風權限未開啟，請在瀏覽器設定中允許麥克風汪！");
+          } else if (event.error === "no-speech") {
+            showToast("🐾 好像沒聽到聲音，再說一次或直接打字也可以喔！");
+          } else {
+            showToast("🐾 目前環境不支援語音，直接打字或點快捷鍵也很快汪！");
+          }
         };
 
         recognition.onend = () => {
@@ -831,7 +872,6 @@
         editIdInput.value = "";
       };
 
-      document.getElementById("quick-custom-btn")?.addEventListener("click", () => openModal());
       document.getElementById("open-add-modal-btn")?.addEventListener("click", () => openModal());
       document.getElementById("close-modal").addEventListener("click", closeModal);
       document.getElementById("cancel-modal").addEventListener("click", closeModal);
